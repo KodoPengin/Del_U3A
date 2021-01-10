@@ -21,7 +21,8 @@ Readme files attached in german and english language
 
 # Screenshots:
 <p float="left">
-n/a
+<img src="https://www.gameindustry.eu/images/git/del_U3A.webp" alt="Main page" width="400"">
+<img src="https://www.gameindustry.eu/images/git/del_U3A_explorer.webp" alt="Discussions" width="400"">
 </p>
 
 # Other projects
