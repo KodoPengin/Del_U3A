@@ -2,11 +2,11 @@ Name: Crashlytics, Logs und Spyware aus Steam und dazugehörigen (Spiele)verzeic
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.7
-Datum: 07.01.2021
+Datum: 10.01.2021
 
 Datei/en:
 del_u3a_de.bat
-Hash: f6e6c92bcf4551a010388b723d63200beb8e8b695f8d6e93ecb589cc12c9a596
+Hash: 9bf048a98c1fffdb27ca2b7c9654e195dffffaf0d6c1dc5a6f3f69d58dda4a0f
 
 --------------------------
 
