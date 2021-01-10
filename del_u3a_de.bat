@@ -72,7 +72,7 @@ echo !ESC![92mSteam-Client!ESC![0m
 echo 1) Crashlytics ^& Spyware entfernen
 echo 2) Bibliothek-Cache leeren
 echo 3) Bilder, Download ^& Shadercache leeren
-echo 4) HTML-Cache leeren (Nach AusfÅhrung Steam einmal aktualisieren lassen)
+echo 4) HTML-Cache leeren (Nach AusfÅhrung Steam einmal aktualisieren)
 echo/
 echo !ESC![92mHosts!ESC![0m
 echo 5) Analytics ^& Crashlytics via hosts blockieren
