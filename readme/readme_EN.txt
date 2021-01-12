@@ -2,11 +2,11 @@ Name: Delete Crashlytics, logs and spyware from Steam and related (game) folders
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.7
-Date: 10.01.2021
+Date: 12.01.2021
 
 File/s:
 del_u3a_en.bat
-Hash: 0c9f9a9e540d1f93ed626de9fd2730e9373475acbcf0ec35a96575f385df8476
+Hash: 3d7e2f59509d82f0513ce5bc515b954d989443baa99d69afdafcc08e8b9411f4
 
 --------------------------
 
@@ -55,8 +55,21 @@ The batch inserts the following entries once (if they do not exist):
 0.0.0.0 stats.unity3d.com
 0.0.0.0 crash.steampowered.com
 0.0.0.0 crashreporter.avalanchestudios.com
+0.0.0.0 tracking.avalanchestudios.com
+0.0.0.0 metrics.avalanchestudios.com
+0.0.0.0 tracking2.avalanchestudios.com
+0.0.0.0 oldtracking.avalanchestudios.com
+0.0.0.0 datarouter.ol.epicgames.com
+0.0.0.0 datarouter-weighted.ol.epicgames.com
+0.0.0.0 datarouter-prod.ak.epicgames.com
+0.0.0.0 metrics.ol.epicgames.com
+0.0.0.0 metric-public-service-prod.ol.epicgames.com
+0.0.0.0 www.google-analytics.com
+0.0.0.0 ssl.google-analytics.com
+0.0.0.0 www-google-analytics.l.google.com
+0.0.0.0 www.googletagmanager.com
 
-More host entries for over 1300 games and programs
+More host entries for around 1500 games and programs
 can be found on https://hosts.gameindustry.eu
 
 --------------------------

@@ -2,11 +2,11 @@ Name: Crashlytics, Logs und Spyware aus Steam und dazugehörigen (Spiele)verzeic
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.7
-Datum: 10.01.2021
+Datum: 12.01.2021
 
 Datei/en:
 del_u3a_de.bat
-Hash: 9bf048a98c1fffdb27ca2b7c9654e195dffffaf0d6c1dc5a6f3f69d58dda4a0f
+Hash: 5a86715aa507ddc4379b5359fdce3516715730ecf5fbcda37c1a5b5ad74878ac
 
 --------------------------
 
@@ -57,8 +57,21 @@ Die Batch fügt (sofern diese nicht existieren) einmalig folgende Einträge ein:
 0.0.0.0 stats.unity3d.com
 0.0.0.0 crash.steampowered.com
 0.0.0.0 crashreporter.avalanchestudios.com
+0.0.0.0 tracking.avalanchestudios.com
+0.0.0.0 metrics.avalanchestudios.com
+0.0.0.0 tracking2.avalanchestudios.com
+0.0.0.0 oldtracking.avalanchestudios.com
+0.0.0.0 datarouter.ol.epicgames.com
+0.0.0.0 datarouter-weighted.ol.epicgames.com
+0.0.0.0 datarouter-prod.ak.epicgames.com
+0.0.0.0 metrics.ol.epicgames.com
+0.0.0.0 metric-public-service-prod.ol.epicgames.com
+0.0.0.0 www.google-analytics.com
+0.0.0.0 ssl.google-analytics.com
+0.0.0.0 www-google-analytics.l.google.com
+0.0.0.0 www.googletagmanager.com
 
-Weitere Blockeinträge für über 1300 Spiele und Programme gibt es
+Weitere Blockeinträge für über 1500 Spiele und Programme gibt es
 auf der Webseite https://hosts.gameindustry.eu
 
 --------------------------
