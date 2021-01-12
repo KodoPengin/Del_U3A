@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # Das Script entfernt Crashlytics, Logs und Analyticsdienste aus dem    #
 echo # Steam-Verzeichnis und dazugehîrigen (Spiele)verzeichnissen , leert    #
 echo # die Cache-Ordner des Clients und erstellst bei Bedarf hosts EintrÑge  #
-echo # (c) by GameIndustry.eu - 07/01/2021 - Version 2.7                     #
+echo # (c) by GameIndustry.eu - 12/01/2021 - Version 2.7                     #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -214,9 +214,35 @@ FIND /C /I "crash.steampowered.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&
 IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 crash.steampowered.com>>%WINDIR%\System32\drivers\etc\hosts
 FIND /C /I "crashreporter.avalanchestudios.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
 IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 crashreporter.avalanchestudios.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "tracking.avalanchestudios.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 tracking.avalanchestudios.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "metrics.avalanchestudios.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 metrics.avalanchestudios.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "tracking2.avalanchestudios.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 tracking2.avalanchestudios.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "oldtracking.avalanchestudios.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 oldtracking.avalanchestudios.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "datarouter.ol.epicgames.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 datarouter.ol.epicgames.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "datarouter-weighted.ol.epicgames.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 datarouter-weighted.ol.epicgames.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "datarouter-prod.ak.epicgames.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 datarouter-prod.ak.epicgames.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "metrics.ol.epicgames.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 metrics.ol.epicgames.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "0.0.0.0 metric-public-service-prod.ol.epicgames.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 metric-public-service-prod.ol.epicgames.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "0.0.0.0 www.google-analytics.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 www.google-analytics.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "0.0.0.0 ssl.google-analytics.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 ssl.google-analytics.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "0.0.0.0 www-google-analytics.l.google.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 www-google-analytics.l.google.com>>%WINDIR%\System32\drivers\etc\hosts
+FIND /C /I "0.0.0.0 www.googletagmanager.com" %WINDIR%\system32\drivers\etc\hosts >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 ECHO 0.0.0.0 www.googletagmanager.com>>%WINDIR%\System32\drivers\etc\hosts
 echo !ESC![92mFertig :]!ESC![0m
 echo/
-echo Weitere BlockeintrÑge fÅr Åber 1300 Spiele und Programme gibt es
+echo Weitere BlockeintrÑge fÅr Åber 1500 Spiele und Programme gibt es
 echo auf der Webseite !ESC![92mhttps://hosts.gameindustry.eu!ESC![0m zu finden.
 echo/
 echo 1) ZurÅck zur Auswahl
@@ -311,6 +337,7 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDatum:!ESC![0m          !ESC![92mBeschreibung:!ESC![0m
+echo 12.01.2021      Avalanche Analytics erweitert, Epic Games Datarouter, Google Analytics und Tagmananger hinzugefÅgt
 echo 07.01.2021      Verschiedene Cacheordner des Steam-Clients kînnen nun geleert werden, Taskkill Optimierung
 echo                 Verschiedene Dienste kînnen nun per hosts blockiert werden. Siehe Readme
 echo 06.01.2021      Historie aus dem Thunderfox Script Åbernommen, MenÅ Åberarbeitet, Hash und
