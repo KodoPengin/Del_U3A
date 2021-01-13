@@ -1,6 +1,6 @@
 @echo off
 set "filename=%~nx0"
-for %%A in (%filename%) do title GameIndustry.eu - Spyware ^& Crashlytics Cleaner fÅr Steam - v2.7 - %%~zA bytes
+for %%A in (%filename%) do title GameIndustry.eu - Spyware ^& Crashlytics Cleaner fÅr Steam - v2.71 - %%~zA bytes
 SETLOCAL EnableExtensions DisableDelayedExpansion
 for /F %%a in ('echo prompt $E ^| cmd') do (
   set "ESC=%%a"
@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # Das Script entfernt Crashlytics, Logs und Analyticsdienste aus dem    #
 echo # Steam-Verzeichnis und dazugehîrigen (Spiele)verzeichnissen , leert    #
 echo # die Cache-Ordner des Clients und erstellst bei Bedarf hosts EintrÑge  #
-echo # (c) by GameIndustry.eu - 12/01/2021 - Version 2.7                     #
+echo # (c) by GameIndustry.eu - 13/01/2021 - Version 2.71                     #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -73,23 +73,25 @@ echo 1) Crashlytics ^& Spyware entfernen
 echo 2) Bibliothek-Cache leeren
 echo 3) Bilder, Download ^& Shadercache leeren
 echo 4) HTML-Cache leeren (Nach AusfÅhrung Steam einmal aktualisieren)
+echo 5) Chatanpassungen zurÅcksetzen (Custom friends.css)
 echo/
 echo !ESC![92mHosts!ESC![0m
-echo 5) Analytics ^& Crashlytics via hosts blockieren
+echo 6) Analytics ^& Crashlytics via hosts blockieren
 echo/
 echo !ESC![92mHauptmenÅ!ESC![0m
-echo 6) Versionshistorie
-echo 7) Beenden
+echo 7) Versionshistorie
+echo 8) Beenden
 echo.
 set /p navi=Eingabe:
 if "%navi%"=="1" goto Steam
 if "%navi%"=="2" goto Biblio
 if "%navi%"=="3" goto DL_Cache
 if "%navi%"=="4" goto HT_Cache
-if "%navi%"=="5" goto Hosts_Block
+if "%navi%"=="5" goto CF_Del
+if "%navi%"=="6" goto Hosts_Block
 cls
-if "%navi%"=="6" goto Version
-if "%navi%"=="7" goto exit
+if "%navi%"=="7" goto Version
+if "%navi%"=="8" goto exit
 goto home
 
 :Steam
@@ -115,6 +117,7 @@ echo BootStrapperForceSelfUpdate=disable>> steam.cfg
 :Crash
 echo !ESC![92m1.!ESC![0m Entferne Daten mit Bezug auf crash.steampowered.com....
 ::Entferne Daten die fÅr Uploads an crash.steampowered.com zustÑndig sind
+timeout /t 3 /nobreak>nul
 IF EXIST "bin\cef\cef.win7\*.*" del "bin\cef\cef.win7\*.*" /q
 IF EXIST "bin\cef\cef.win7\" RMDIR "bin\cef\cef.win7\" /s /q
 IF EXIST "dumps\*.*" del "dumps\*.*" /q
@@ -124,6 +127,7 @@ IF EXIST "bin\cef\cef.win7x64\crash_reporter.cfg" del "bin\cef\cef.win7x64\crash
 IF EXIST "bin\cef\cef.win7x64\debug.log" del "bin\cef\cef.win7x64\debug.log" /q
 IF EXIST "crashhandler64.dll" del "crashhandler64.dll" /f /q
 IF EXIST "crashhandler.dll" del "crashhandler.dll" /f /q
+IF EXIST "crashhandler.dll.old" del "crashhandler.dll.old" /f /q
 IF EXIST "steamerrorreporter.exe" del "steamerrorreporter.exe" /f /q
 IF EXIST "steamerrorreporter64.exe" del "steamerrorreporter64.exe" /f /q
 IF EXIST "WriteMiniDump.exe" del "WriteMiniDump.exe" /f /q
@@ -329,6 +333,29 @@ if "%navi%"=="1" goto home
 if "%navi%"=="2" exit
 Pause
 
+
+:CF_Del
+@cls
+echo ModdingrÅckstÑnde im Ordner ClientUI werden entfernt
+echo/
+echo !ESC![92m1.!ESC![0m Anpassungen entfernen....
+echo/
+IF EXIST "clientui\css\friends.custom.css" del "clientui\css\friends.custom.css" /q >nul 2>&1
+IF EXIST "clientui\friends.custom.css" del "clientui\friends.custom.css" /s /q >nul 2>&1
+IF EXIST "clientui\friends.original.css" del "clientui\friends.original.css" /s /q >nul 2>&1
+IF EXIST "clientui\ofriends.custom.css" del "clientui\ofriends.custom.css" /s /q >nul 2>&1
+IF EXIST "clientui\ofriends.original.css" del "clientui\ofriends.original.css" /s /q >nul 2>&1
+echo !ESC![92mFertig :]!ESC![0m
+echo/
+echo 1) ZurÅck zur Auswahl
+echo 2) Batch schlie·en
+echo/
+set /p navi=Eingabe:
+cls
+if "%navi%"=="1" goto home
+if "%navi%"=="2" exit
+Pause
+
 :Version
 @cls
 echo !ESC![92mDateiname:!ESC![0m %~nx0
@@ -337,6 +364,8 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDatum:!ESC![0m          !ESC![92mBeschreibung:!ESC![0m
+echo 13.01.2021      Timer von 2 Sekunden integriert, da sonst das Script zu schnell ist - Option zum sÑubern
+echo                 von friends.css Modifikationen und eine vergessene crashhandler.dll.old hinzugefÅgt
 echo 12.01.2021      Avalanche Analytics erweitert, Epic Games Datarouter, Google Analytics und Tagmananger hinzugefÅgt
 echo 07.01.2021      Verschiedene Cacheordner des Steam-Clients kînnen nun geleert werden, Taskkill Optimierung
 echo                 Verschiedene Dienste kînnen nun per hosts blockiert werden. Siehe Readme

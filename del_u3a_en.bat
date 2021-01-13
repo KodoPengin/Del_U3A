@@ -1,6 +1,6 @@
 @echo off
 set "filename=%~nx0"
-for %%A in (%filename%) do title GameIndustry.eu - Spyware ^& Crashlytics Cleaner for Steam - v2.7 - %%~zA bytes
+for %%A in (%filename%) do title GameIndustry.eu - Spyware ^& Crashlytics Cleaner for Steam - v2.71 - %%~zA bytes
 SETLOCAL EnableExtensions DisableDelayedExpansion
 for /F %%a in ('echo prompt $E ^| cmd') do (
   set "ESC=%%a"
@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # This script deletes crashyltics, logs and spyware from the            #
 echo # Steamfolder and from related (game) folders, clean the cache folders  #
 echo # and creates a hosts file if necessary to block some connections       #
-echo # (c) by GameIndustry.eu - 12 January 2021 - Version 2.7                #
+echo # (c) by GameIndustry.eu - 13 January 2021 - Version 2.71                #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -70,26 +70,28 @@ echo Initialization of "%~nx0" for user: %USERNAME%
 echo/
 echo !ESC![92mSteam-Client!ESC![0m
 echo 1) Clean Crashlytics ^& Spyware
-echo 3) Clean Library Cache
+echo 2) Clean Library Cache
 echo 3) Clean Picture, Download ^& Shadercache
 echo 4) Clean HTML-Cache (Allow Steam to update once after execution)
+echo 5) Clean Modding leftovers (Custom friends.css)
 echo/
 echo !ESC![92mHosts!ESC![0m
-echo 5) Block Unity Analytics ^& Valve Crashlytics via hosts
+echo 6) Block several Spyware ^& Crashlytics via hosts
 echo/
 echo !ESC![92mMain Menu!ESC![0m
-echo 6) Version history
-echo 7) Close batch
+echo 7) Version history
+echo 8) Close batch
 echo.
 set /p navi=Choose:
 if "%navi%"=="1" goto Steam
 if "%navi%"=="2" goto Biblio
 if "%navi%"=="3" goto DL_Cache
 if "%navi%"=="4" goto HT_Cache
-if "%navi%"=="5" goto Hosts_Block
+if "%navi%"=="5" goto CF_Del
+if "%navi%"=="6" goto Hosts_Block
 cls
-if "%navi%"=="6" goto Version
-if "%navi%"=="7" goto exit
+if "%navi%"=="7" goto Version
+if "%navi%"=="8" goto exit
 goto home
 
 :Steam
@@ -115,6 +117,7 @@ echo BootStrapperForceSelfUpdate=disable>> steam.cfg
 :Crash
 echo !ESC![92m1.!ESC![0m Delete files with relation to crash.steampowered.com....
 ::Delete files with relation to crash.steampowered.com
+timeout /t 3 /nobreak>nul
 IF EXIST "bin\cef\cef.win7\*.*" del "bin\cef\cef.win7\*.*" /q
 IF EXIST "bin\cef\cef.win7\" RMDIR "bin\cef\cef.win7\" /s /q
 IF EXIST "dumps\*.*" del "dumps\*.*" /q
@@ -124,6 +127,7 @@ IF EXIST "bin\cef\cef.win7x64\crash_reporter.cfg" del "bin\cef\cef.win7x64\crash
 IF EXIST "bin\cef\cef.win7x64\debug.log" del "bin\cef\cef.win7x64\debug.log" /q
 IF EXIST "crashhandler64.dll" del "crashhandler64.dll" /f /q
 IF EXIST "crashhandler.dll" del "crashhandler.dll" /f /q
+IF EXIST "crashhandler.dll.old" del "crashhandler.dll.old" /f /q
 IF EXIST "steamerrorreporter.exe" del "steamerrorreporter.exe" /f /q
 IF EXIST "steamerrorreporter64.exe" del "steamerrorreporter64.exe" /f /q
 IF EXIST "WriteMiniDump.exe" del "WriteMiniDump.exe" /f /q
@@ -327,6 +331,28 @@ if "%navi%"=="1" goto home
 if "%navi%"=="2" exit
 Pause
 
+:CF_Del
+@cls
+echo Modding leftovers from ClientUI folder will be deleted
+echo/
+echo !ESC![92m1.!ESC![0m Deleting modifications....
+echo/
+IF EXIST "clientui\css\friends.custom.css" del "clientui\css\friends.custom.css" /q >nul 2>&1
+IF EXIST "clientui\friends.custom.css" del "clientui\friends.custom.css" /s /q >nul 2>&1
+IF EXIST "clientui\friends.original.css" del "clientui\friends.original.css" /s /q >nul 2>&1
+IF EXIST "clientui\ofriends.custom.css" del "clientui\ofriends.custom.css" /s /q >nul 2>&1
+IF EXIST "clientui\ofriends.original.css" del "clientui\ofriends.original.css" /s /q >nul 2>&1
+echo !ESC![92mDone:]!ESC![0m
+echo/
+echo !ESC![92m1.!ESC![0m Back to Menu
+echo !ESC![92m2.!ESC![0m Close Batch
+echo/
+set /p navi=Choose:
+cls
+if "%navi%"=="1" goto home
+if "%navi%"=="2" exit
+Pause
+
 :Version
 @cls
 echo !ESC![92mFilename:!ESC![0m %~nx0
@@ -335,6 +361,8 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDate:!ESC![0m           !ESC![92mDescription:!ESC![0m
+echo 13.01.2021      2s Timer added because the Script would be too fast - Option to delete modded friends.css
+echo                 files and added crashhandler.dll.old to list
 echo 12.01.2021      Added Avalanche Analytics, Epic Games Datarouter, Google Analytics and Tagmananger
 echo 07.01.2021      Function to delete several Cache folders, Taskkill optimization
 echo                 Several services can be blocked via hosts, see readme
