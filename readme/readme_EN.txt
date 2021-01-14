@@ -2,11 +2,11 @@ Name: Delete Crashlytics, logs and spyware from Steam and related (game) folders
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.71
-Date: 13.01.2021
+Date: 14.01.2021
 
 File/s:
 del_u3a_en.bat
-Hash: f58ca96ac2c833f6b0b212073f601dbd4f3d7faed906d5ae86bc88ac6994490d
+Hash: eb3bce1b769a418feed1a75a63ddadfca43396a7bac7eed6271cc3f385b2e50c
 
 --------------------------
 
@@ -104,6 +104,7 @@ Following files and folders will be deleted:
 - Steam
 bin\cef\cef.win7\*.*
 dumps\*.*
+logs\*.*
 bin\cef\cef.win7x64\crash_reporter.cfg
 bin\cef\cef.win7x64\debug.log
 .crash

@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # Das Script entfernt Crashlytics, Logs und Analyticsdienste aus dem    #
 echo # Steam-Verzeichnis und dazugehîrigen (Spiele)verzeichnissen , leert    #
 echo # die Cache-Ordner des Clients und erstellst bei Bedarf hosts EintrÑge  #
-echo # (c) by GameIndustry.eu - 13/01/2021 - Version 2.71                     #
+echo # (c) by GameIndustry.eu - 14/01/2021 - Version 2.71                     #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -73,7 +73,7 @@ echo 1) Crashlytics ^& Spyware entfernen
 echo 2) Bibliothek-Cache leeren
 echo 3) Bilder, Download ^& Shadercache leeren
 echo 4) HTML-Cache leeren (Nach AusfÅhrung Steam einmal aktualisieren)
-echo 5) Chatanpassungen zurÅcksetzen (Custom friends.css)
+echo 5) ModdingrÅckstÑnde (Custom .css Dateien)
 echo/
 echo !ESC![92mHosts!ESC![0m
 echo 6) Analytics ^& Crashlytics via hosts blockieren
@@ -115,13 +115,15 @@ echo BootStrapperForceSelfUpdate=disable>> steam.cfg
 )
 
 :Crash
-echo !ESC![92m1.!ESC![0m Entferne Daten mit Bezug auf crash.steampowered.com....
-::Entferne Daten die fÅr Uploads an crash.steampowered.com zustÑndig sind
+echo !ESC![92m1.!ESC![0m Entferne Crashlytics, Logs und Dumps von der Valve Corporation....
+::Entferne Daten die fÅr Uploads und Logging zustÑndig sind
 timeout /t 3 /nobreak>nul
 IF EXIST "bin\cef\cef.win7\*.*" del "bin\cef\cef.win7\*.*" /q
 IF EXIST "bin\cef\cef.win7\" RMDIR "bin\cef\cef.win7\" /s /q
 IF EXIST "dumps\*.*" del "dumps\*.*" /q
 IF EXIST "dumps\" RMDIR "dumps\" /s /q
+IF EXIST "logs\*.*" del "logs\*.*" /q
+IF EXIST "logs\" RMDIR "logs\" /s /q
 IF EXIST ".crash" del ".crash" /q
 IF EXIST "bin\cef\cef.win7x64\crash_reporter.cfg" del "bin\cef\cef.win7x64\crash_reporter.cfg" /q
 IF EXIST "bin\cef\cef.win7x64\debug.log" del "bin\cef\cef.win7x64\debug.log" /q
@@ -188,7 +190,7 @@ Pause
 :Hosts_Block
 @cls
 echo/
-echo Unity Analytics, Avalanche Studios ^& Valve Crashlytics via hosts blockieren
+echo Blocke einige BasiseintrÑge zu Tracking, Analytics ^& Spywaredienste mit Hilfe der hosts
 echo/
 echo !ESC![92m1.!ESC![0m EintrÑge werden in die hosts Datei geschrieben....
 echo/
@@ -336,7 +338,7 @@ Pause
 
 :CF_Del
 @cls
-echo ModdingrÅckstÑnde im Ordner ClientUI werden entfernt
+echo ModdingrÅckstÑnde im werden entfernt
 echo/
 echo !ESC![92m1.!ESC![0m Anpassungen entfernen....
 echo/
@@ -345,6 +347,10 @@ IF EXIST "clientui\friends.custom.css" del "clientui\friends.custom.css" /s /q >
 IF EXIST "clientui\friends.original.css" del "clientui\friends.original.css" /s /q >nul 2>&1
 IF EXIST "clientui\ofriends.custom.css" del "clientui\ofriends.custom.css" /s /q >nul 2>&1
 IF EXIST "clientui\ofriends.original.css" del "clientui\ofriends.original.css" /s /q >nul 2>&1
+IF EXIST "steamui\libraryroot.custom.css" del "steamui\libraryroot.custom.css" /s /q >nul 2>&1
+IF EXIST "steamui\libraryroot.original.css" del "steamui\libraryroot.original.css" /s /q >nul 2>&1
+IF EXIST "steamui\main.custom.css" del "steamui\main.custom.css" /s /q >nul 2>&1
+IF EXIST "steamui\main.original.css" del "steamui\main.original.css" /s /q >nul 2>&1
 echo !ESC![92mFertig :]!ESC![0m
 echo/
 echo 1) ZurÅck zur Auswahl

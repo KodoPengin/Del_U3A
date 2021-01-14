@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # This script deletes crashyltics, logs and spyware from the            #
 echo # Steamfolder and from related (game) folders, clean the cache folders  #
 echo # and creates a hosts file if necessary to block some connections       #
-echo # (c) by GameIndustry.eu - 13 January 2021 - Version 2.71                #
+echo # (c) by GameIndustry.eu - 14 January 2021 - Version 2.71                #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -73,7 +73,7 @@ echo 1) Clean Crashlytics ^& Spyware
 echo 2) Clean Library Cache
 echo 3) Clean Picture, Download ^& Shadercache
 echo 4) Clean HTML-Cache (Allow Steam to update once after execution)
-echo 5) Clean Modding leftovers (Custom friends.css)
+echo 5) Clean Modding leftovers (Custom css files)
 echo/
 echo !ESC![92mHosts!ESC![0m
 echo 6) Block several Spyware ^& Crashlytics via hosts
@@ -115,13 +115,15 @@ echo BootStrapperForceSelfUpdate=disable>> steam.cfg
 )
 
 :Crash
-echo !ESC![92m1.!ESC![0m Delete files with relation to crash.steampowered.com....
-::Delete files with relation to crash.steampowered.com
+echo !ESC![92m1.!ESC![0m Delete Crashlytics, Dumps and Logs related to Valve Corporation....
+::Delete files related to logging and tracking
 timeout /t 3 /nobreak>nul
 IF EXIST "bin\cef\cef.win7\*.*" del "bin\cef\cef.win7\*.*" /q
 IF EXIST "bin\cef\cef.win7\" RMDIR "bin\cef\cef.win7\" /s /q
 IF EXIST "dumps\*.*" del "dumps\*.*" /q
 IF EXIST "dumps\" RMDIR "dumps\" /s /q
+IF EXIST "logs\*.*" del "logs\*.*" /q
+IF EXIST "logs\" RMDIR "logs\" /s /q
 IF EXIST ".crash" del ".crash" /q
 IF EXIST "bin\cef\cef.win7x64\crash_reporter.cfg" del "bin\cef\cef.win7x64\crash_reporter.cfg" /q
 IF EXIST "bin\cef\cef.win7x64\debug.log" del "bin\cef\cef.win7x64\debug.log" /q
@@ -188,7 +190,7 @@ Pause
 :Hosts_Block
 @cls
 echo/
-echo Blocking Unity Analytics, Avalanche Studios ^& Valve Crashlytics via hosts
+echo Blocking some basic tracker, analytics and spyware services via hosts
 echo/
 echo !ESC![92m1.!ESC![0m Write entries to hosts....
 echo/
@@ -333,7 +335,7 @@ Pause
 
 :CF_Del
 @cls
-echo Modding leftovers from ClientUI folder will be deleted
+echo Modding leftovers will be deleted
 echo/
 echo !ESC![92m1.!ESC![0m Deleting modifications....
 echo/
@@ -342,6 +344,10 @@ IF EXIST "clientui\friends.custom.css" del "clientui\friends.custom.css" /s /q >
 IF EXIST "clientui\friends.original.css" del "clientui\friends.original.css" /s /q >nul 2>&1
 IF EXIST "clientui\ofriends.custom.css" del "clientui\ofriends.custom.css" /s /q >nul 2>&1
 IF EXIST "clientui\ofriends.original.css" del "clientui\ofriends.original.css" /s /q >nul 2>&1
+IF EXIST "steamui\libraryroot.custom.css" del "steamui\libraryroot.custom.css" /s /q >nul 2>&1
+IF EXIST "steamui\libraryroot.original.css" del "steamui\libraryroot.original.css" /s /q >nul 2>&1
+IF EXIST "steamui\main.custom.css" del "steamui\main.custom.css" /s /q >nul 2>&1
+IF EXIST "steamui\main.original.css" del "steamui\main.original.css" /s /q >nul 2>&1
 echo !ESC![92mDone:]!ESC![0m
 echo/
 echo !ESC![92m1.!ESC![0m Back to Menu
