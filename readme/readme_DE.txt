@@ -2,11 +2,11 @@ Name: Crashlytics, Logs und Spyware aus Steam und dazugehörigen (Spiele)verzeic
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.71
-Datum: 14.01.2021
+Datum: 15.01.2021
 
 Datei/en:
 del_u3a_de.bat
-Hash: 6e60aaf611139593857cebfc30a93dd65636a7a75850c9d47e1bf99cb77924d2
+Hash: 8ba22f63b4a7032534b24dfb556440b66fdd397a23884121dfd529c4d80c64a6
 
 --------------------------
 
@@ -78,6 +78,7 @@ auf der Webseite https://hosts.gameindustry.eu
 
 Letzte Änderungen:
 
+- Weitere Dateien zum Säuberungsprozess hinzugefügt
 - 2sTimer integriert | Option zum Säubern der friends.css Modifikationen und eine vergessene crashhandler.dll.old hinzugefügt
 - Unity Analytics und Valve Crashlytics können via hosts zu blockiert werden
 - Funktionen zum Leeren verschiedener Cacheordner von Steam hinzugefügt
@@ -116,7 +117,7 @@ steamerrorreporter.exe
 steamerrorreporter64.exe
 WriteMiniDump.exe
 
-- Drittanbieter Crashlytics
+- Drittanbieter Crashlytics, Dumps, Logs und nicht benötigte Dateien
 *.log
 *.dmp
 CrashUploader.Base.Azure.dll
@@ -141,3 +142,9 @@ UnityCrashHandler32.exe
 UnityCrashHandler64.exe
 UnityEngine.CrashReportingModule.dll
 UnityEngine.CrashReportingModule.dll.mdb
+UnityEngine.PerformanceReportingModule.dll
+Unity.MemoryProfiler.dll
+UnityEngine.UnityConnectModule.dll
+UnityEngine.UnityTestProtocolModule.dll
+System.Diagnostics.StackTrace.dll
+UnityEngine.SpatialTracking.dll

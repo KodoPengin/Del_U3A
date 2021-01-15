@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # This script deletes crashyltics, logs and spyware from the            #
 echo # Steamfolder and from related (game) folders, clean the cache folders  #
 echo # and creates a hosts file if necessary to block some connections       #
-echo # (c) by GameIndustry.eu - 14 January 2021 - Version 2.71                #
+echo # (c) by GameIndustry.eu - 15 January 2021 - Version 2.71                #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -138,7 +138,7 @@ echo !ESC![92m2.!ESC![0m Delete (if exist) Crashdumps from system folder....!ESC
 ::Entferne Crashdumps
 IF EXIST "%USERPROFILE%\AppData\Local\CrashDumps\*.*" del "%UserProfile%\AppData\Local\CrashDumps\*.*" /q
 
-echo !ESC![92m3.!ESC![0m Delete Crashlytics, Logs ^& Dumps from Third party companies....
+echo !ESC![92m3.!ESC![0m Delete Crashlytics, Logs, Dumps ^& unnecessary stuff from Third party companies....
 ::Crashlytics from Third party companies
 del /s /f /q CrashUploader.Base.Azure.dll >nul 2>nul
 del /s /f /q CrashUploader.Base.dll >nul 2>nul
@@ -159,6 +159,12 @@ del /s /f /q CrashReportClient.pdb >nul 2>nul
 del /s /f /q CrashReporter.resources.dll >nul 2>nul
 del /s /f /q REDEngineErrorReporter.exe >nul 2>nul
 del /s /f /q UnityEngine.CrashReportingModule* >nul 2>nul
+del /s /f /q UnityEngine.PerformanceReportingModule.dll >nul 2>nul
+del /s /f /q Unity.MemoryProfiler.dll >nul 2>nul
+del /s /f /q UnityEngine.UnityConnectModule.dll >nul 2>nul
+del /s /f /q UnityEngine.UnityTestProtocolModule.dll >nul 2>nul
+del /s /f /q System.Diagnostics.StackTrace.dll >nul 2>nul
+del /s /f /q UnityEngine.SpatialTracking.dll >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
 
@@ -367,6 +373,7 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDate:!ESC![0m           !ESC![92mDescription:!ESC![0m
+echo 15.01.2021      Added more Unity files to cleaning process
 echo 13.01.2021      2s Timer added because the Script would be too fast - Option to delete modded friends.css
 echo                 files and added crashhandler.dll.old to list
 echo 12.01.2021      Added Avalanche Analytics, Epic Games Datarouter, Google Analytics and Tagmananger

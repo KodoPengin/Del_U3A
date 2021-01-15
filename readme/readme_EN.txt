@@ -2,11 +2,11 @@ Name: Delete Crashlytics, logs and spyware from Steam and related (game) folders
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.71
-Date: 14.01.2021
+Date: 15.01.2021
 
 File/s:
 del_u3a_en.bat
-Hash: eb3bce1b769a418feed1a75a63ddadfca43396a7bac7eed6271cc3f385b2e50c
+Hash: f6b53450f1d4c946ca889b92af1c7a713f74e06fcd42a190c61eadb04411976c
 
 --------------------------
 
@@ -76,6 +76,7 @@ can be found on https://hosts.gameindustry.eu
 
 Latest changes:
 
+- Added more files to the cleaning process
 - 2s Timer added because the Script would be too fast - Option to delete modded friends.css files and added crashhandler.dll.old to list
 - Several analytics and crashlytics can be blocked now
 - Function added to delete the Cache folders
@@ -115,7 +116,7 @@ steamerrorreporter.exe
 steamerrorreporter64.exe
 WriteMiniDump.exe
 
-- Third party crashlytics
+- Third party crashlytics, dumps, logs and unnecessary files
 *.log
 *.dmp
 CrashUploader.Base.Azure.dll
@@ -140,3 +141,9 @@ UnityCrashHandler32.exe
 UnityCrashHandler64.exe
 UnityEngine.CrashReportingModule.dll
 UnityEngine.CrashReportingModule.dll.mdb
+UnityEngine.PerformanceReportingModule.dll
+Unity.MemoryProfiler.dll
+UnityEngine.UnityConnectModule.dll
+UnityEngine.UnityTestProtocolModule.dll
+System.Diagnostics.StackTrace.dll
+UnityEngine.SpatialTracking.dll
