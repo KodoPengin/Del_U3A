@@ -1,12 +1,12 @@
 Name: Crashlytics, Logs und Spyware aus Steam und dazugehörigen (Spiele)verzeichnissen löschen
 Quelle: https://gameindustry.eu/
 Author: Pengin
-Version: 2.71
-Datum: 15.01.2021
+Version: 2.72
+Datum: 17.01.2021
 
 Datei/en:
 del_u3a_de.bat
-Hash: 8ba22f63b4a7032534b24dfb556440b66fdd397a23884121dfd529c4d80c64a6
+Hash: dd5af6117b1694cdecabd15af4c464e07ea8edbf32b7136d55055843e4e6d905
 
 --------------------------
 
@@ -19,7 +19,7 @@ Kopiere die del_u3a_de.bat in das jeweilige Steam,- oder "Bibliotheks"verzeichni
 Beschreibung:
 
 Die Batch durchforstet innerhalb des Steamordners Dateien nach Crashlytics und Logs und löscht dazugehörige Dateien.
-Zusätzlich wird der CrashDump Ordner (sofern vorhanden) im Nutzerverzeichnis geleert.
+Zusätzlich werden die CrashDump und Unity Analytics Ordner (sofern vorhanden) im Nutzerverzeichnis geleert.
 
 Dies beugt einer heimlichen Datenaufnahme und Versand von Crashlytics durch Firmen wie Unity Technologies, ApS, Epic Games, Inc.,
 oder der Valve Corporations vor und verstärkt die eigene Privatsphäre während der eigenen Spiele-Sessions.
@@ -34,50 +34,9 @@ Um Steam wie gewohnt zu aktualisieren muss die Steam.cfg (temporär) aus dem Ins
 
 --------------------------
 
-hosts:
-
-Die hosts Datei dient für unseren Zweck als Schutz vor ausgehendem Verkehr und dem Versand unserer Daten. Die Batch tätigt
-unter Punkt 5 einige Einträge in dieser Datei und blockiert Analytics der Firma Unity Technologies, sowie Crashsender der
-Firmen Valve Corporation und Avalanche Studios.
-
-hosts-Ordner: C:\Windows\System32\drivers\etc
-
-Die Batch fügt (sofern diese nicht existieren) einmalig folgende Einträge ein:
-
-0.0.0.0 remote-config-proxy-prd.uca.cloud.unity3d.com
-0.0.0.0 thind-gke-euw.prd.data.corp.unity3d.com
-0.0.0.0 thind-gke-usc.prd.data.corp.unity3d.com
-0.0.0.0 thind-gke-ape.prd.data.corp.unity3d.com
-0.0.0.0 53.26.241.35.bc.googleusercontent.com
-0.0.0.0 186.194.186.35.bc.googleusercontent.com
-0.0.0.0 config.uca.cloud.unity3d.com
-0.0.0.0 cdp.cloud.unity3d.com
-0.0.0.0 api.uca.cloud.unity3d.com
-0.0.0.0 perf-events.cloud.unity3d.com
-0.0.0.0 stats.unity3d.com
-0.0.0.0 crash.steampowered.com
-0.0.0.0 crashreporter.avalanchestudios.com
-0.0.0.0 tracking.avalanchestudios.com
-0.0.0.0 metrics.avalanchestudios.com
-0.0.0.0 tracking2.avalanchestudios.com
-0.0.0.0 oldtracking.avalanchestudios.com
-0.0.0.0 datarouter.ol.epicgames.com
-0.0.0.0 datarouter-weighted.ol.epicgames.com
-0.0.0.0 datarouter-prod.ak.epicgames.com
-0.0.0.0 metrics.ol.epicgames.com
-0.0.0.0 metric-public-service-prod.ol.epicgames.com
-0.0.0.0 www.google-analytics.com
-0.0.0.0 ssl.google-analytics.com
-0.0.0.0 www-google-analytics.l.google.com
-0.0.0.0 www.googletagmanager.com
-
-Weitere Blockeinträge für über 1500 Spiele und Programme gibt es
-auf der Webseite https://hosts.gameindustry.eu
-
---------------------------
-
 Letzte Änderungen:
 
+- Hosts Sektion wurde vorerst wieder entfernt, weiter Unity Analytics Dateien hinzugefügt
 - Weitere Dateien zum Säuberungsprozess hinzugefügt
 - 2sTimer integriert | Option zum Säubern der friends.css Modifikationen und eine vergessene crashhandler.dll.old hinzugefügt
 - Unity Analytics und Valve Crashlytics können via hosts zu blockiert werden
@@ -101,7 +60,9 @@ Letzte Änderungen:
 Folgende Dateien und Ordner werden mit dieser Batch gelöscht:
 
 - System
-%Nutzername%\Appdata\Local\CrashDumps\*.*
+%username%\Appdata\Local\CrashDumps\*.*
+%USERPROFILE%\AppData\LocalLow\Unity.
+%USERPROFILE%\AppData\LocalLow\*.log
 
 - Steam
 bin\cef\cef.win7\*.*
