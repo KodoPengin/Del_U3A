@@ -11,8 +11,8 @@ echo !ESC![92m
 echo -------------------------------------------------------------------------
 echo # Das Script entfernt Crashlytics, Logs und Analyticsdienste aus dem    #
 echo # Steam-Verzeichnis und dazugehîrigen (Spiele)verzeichnissen , leert    #
-echo # die Cache-Ordner des Clients und erstellst bei Bedarf hosts EintrÑge  #
-echo # (c) by GameIndustry.eu - 17/01/2021 - Version 2.72                     #
+echo # die Cache-Ordner und entfernt Modding RÅckstÑnde der custom.css       #
+echo # (c) by GameIndustry.eu - 17/01/2021 - Version 2.72                    #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 

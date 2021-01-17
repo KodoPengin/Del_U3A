@@ -6,7 +6,7 @@ Datum: 17.01.2021
 
 Datei/en:
 del_u3a_de.bat
-Hash: dd5af6117b1694cdecabd15af4c464e07ea8edbf32b7136d55055843e4e6d905
+Hash: b87b2702869f5676b94007ae29e30e71424f0301c570016fe8bea10413c84b0d
 
 --------------------------
 

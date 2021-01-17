@@ -11,8 +11,8 @@ echo !ESC![92m
 echo -------------------------------------------------------------------------
 echo # This script deletes crashyltics, logs and spyware from the            #
 echo # Steamfolder and from related (game) folders, clean the cache folders  #
-echo # and creates a hosts file if necessary to block some connections       #
-echo # (c) by GameIndustry.eu - 17 January 2021 - Version 2.72                #
+echo # and deletes modding leftovers from custom.css files if necessary      #
+echo # (c) by GameIndustry.eu - 17 January 2021 - Version 2.72               #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
