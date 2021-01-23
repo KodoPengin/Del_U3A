@@ -158,14 +158,6 @@ del /s /f /q CrashReporter.resources.dll >nul 2>nul
 del /s /f /q REDEngineErrorReporter.exe >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
-::Unity Technologies
-for /f "delims=" %%F in ('dir /b /ad /s "%USERPROFILE%\AppData\LocalLow\Unity.*" 2^>nul') do rd /s /q "%%F"
-set ORIGINAL_DIR=%CD%
-set folder="%USERPROFILE%\AppData\LocalLow\"
-IF EXIST "%folder%" (
-cd /d %folder%
-for /f "delims=" %%i in ('dir /a-d /s /b 2^> nul ^ *.log') do del "%%~i"
-)
 del /s /f /q UnityEngine.CrashReportingModule* >nul 2>nul
 del /s /f /q UnityEngine.PerformanceReportingModule.dll >nul 2>nul
 del /s /f /q Unity.MemoryProfiler.dll >nul 2>nul
@@ -187,6 +179,15 @@ IF EXIST "%folder%" (
 for /f "delims=" %%i in ('dir /a-d /s /b 2^> nul ^ UnityCrashHandler*.exe') do del "%%~i"
 )
 chdir /d %ORIGINAL_DIR%
+
+::Unity Technologies
+for /f "delims=" %%F in ('dir /b /ad /s "%USERPROFILE%\AppData\LocalLow\Unity.*" 2^>nul') do rd /s /q "%%F"
+set ORIGINAL_DIR=%CD%
+set folder="%USERPROFILE%\AppData\LocalLow\"
+IF EXIST "%folder%" (
+cd /d %folder%
+for /f "delims=" %%i in ('dir /a-d /s /b 2^> nul ^ *.log') do del "%%~i"
+)
 echo/
 echo !ESC![92mDone:]!ESC![0m
 echo/
