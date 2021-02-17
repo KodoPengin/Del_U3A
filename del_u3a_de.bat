@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # Das Script entfernt Crashlytics, Logs und Analyticsdienste aus dem    #
 echo # Steam-Verzeichnis und dazugehîrigen (Spiele)verzeichnissen , leert    #
 echo # die Cache-Ordner und entfernt Modding RÅckstÑnde der custom.css       #
-echo # (c) by GameIndustry.eu - 17/01/2021 - Version 2.72                    #
+echo # (c) by GameIndustry.eu - 17/02/2021 - Version 2.72                    #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -156,6 +156,7 @@ del /s /f /q CrashReportClient.exe >nul 2>nul
 del /s /f /q CrashReportClient.pdb >nul 2>nul
 del /s /f /q CrashReporter.resources.dll >nul 2>nul
 del /s /f /q REDEngineErrorReporter.exe >nul 2>nul
+del /s /f /q abbey_crash_reporter.exe >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
 del /s /f /q UnityEngine.CrashReportingModule* >nul 2>nul
@@ -310,6 +311,7 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDatum:!ESC![0m          !ESC![92mBeschreibung:!ESC![0m
+echo 17.02.2021      Abbey Games Crashreporter hinzugefÅgt
 echo 17.01.2021      Hosts Sektion wurde vorerst wieder entfernt, weiter Unity Analytics Dateien hinzugefÅgt
 echo 15.01.2021      Weitere Unity Dateien zum SÑuberungsprozess hinzugefÅgt
 echo 13.01.2021      Timer von 2 Sekunden integriert, da sonst das Script zu schnell ist - Option zum sÑubern

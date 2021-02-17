@@ -2,11 +2,11 @@ Name: Crashlytics, Logs und Spyware aus Steam und dazugehörigen (Spiele)verzeic
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.72
-Datum: 23.01.2021
+Datum: 17.02.2021
 
 Datei/en:
 del_u3a_de.bat
-Hash: 9f36754a33af45f235b066ec9004cd70ca3d5d91fcb4b66b010a5c3ae1388180
+Hash: 598308a58a5cb73f6bc69f4765a29ef52b53baf77e5f424468707628bba06c8f
 
 --------------------------
 
@@ -36,6 +36,7 @@ Um Steam wie gewohnt zu aktualisieren muss die Steam.cfg (temporär) aus dem Ins
 
 Letzte Änderungen:
 
+- Abbey Games Crashreporter hinzugefügt
 - Hosts Sektion wurde vorerst wieder entfernt, weiter Unity Analytics Dateien hinzugefügt
 - Weitere Dateien zum Säuberungsprozess hinzugefügt
 - 2sTimer integriert | Option zum Säubern der friends.css Modifikationen und eine vergessene crashhandler.dll.old hinzugefügt
@@ -99,6 +100,7 @@ CrashReportClient.exe
 CrashReportClient.pdb
 CrashReporter.resources.dll
 REDEngineErrorReporter.exe
+abbey_crash_reporter.exe
 UnityCrashHandler32.exe
 UnityCrashHandler64.exe
 UnityEngine.CrashReportingModule.dll
