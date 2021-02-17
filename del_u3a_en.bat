@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # This script deletes crashyltics, logs and spyware from the            #
 echo # Steamfolder and from related (game) folders, clean the cache folders  #
 echo # and deletes modding leftovers from custom.css files if necessary      #
-echo # (c) by GameIndustry.eu - 17 January 2021 - Version 2.72               #
+echo # (c) by GameIndustry.eu - 17 February 2021 - Version 2.72              #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -156,6 +156,7 @@ del /s /f /q CrashReportClient.exe >nul 2>nul
 del /s /f /q CrashReportClient.pdb >nul 2>nul
 del /s /f /q CrashReporter.resources.dll >nul 2>nul
 del /s /f /q REDEngineErrorReporter.exe >nul 2>nul
+del /s /f /q abbey_crash_reporter.exe >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
 del /s /f /q UnityEngine.CrashReportingModule* >nul 2>nul
@@ -309,6 +310,7 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDate:!ESC![0m           !ESC![92mDescription:!ESC![0m
+echo 17.02.2021      Added Abbey Games Crashreporter
 echo 17.01.2021      Temporary deleted the hosts section and added more Unity Analytics stuff
 echo 15.01.2021      Added more Unity files to cleaning process
 echo 13.01.2021      2s Timer added because the Script would be too fast - Option to delete modded friends.css

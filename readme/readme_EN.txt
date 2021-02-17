@@ -2,11 +2,11 @@ Name: Delete Crashlytics, logs and spyware from Steam and related (game) folders
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.72
-Date: 23.01.2021
+Date: 17.02.2021
 
 File/s:
 del_u3a_en.bat
-Hash: a3f7d910ee94c9b681c6df6fb16323873b00a5bbd661e4f5280c8fa093066414
+Hash: 7a733e7db446d413bdf20e323a7804545bc882412607f1f2bcead3c4da98ffdb
 
 --------------------------
 
@@ -34,6 +34,7 @@ Users who use their own layout modifications for Steam probably know this proced
 
 Latest changes:
 
+- Added Abbey Games Crashreporter
 - Temporary deleted the hosts section and added more Unity Analytics stuff
 - More Unity Analytics added to deletion list
 - Added more files to the cleaning process
@@ -99,6 +100,7 @@ CrashReportClient.exe
 CrashReportClient.pdb
 CrashReporter.resources.dll
 REDEngineErrorReporter.exe
+abbey_crash_reporter.exe
 UnityCrashHandler32.exe
 UnityCrashHandler64.exe
 UnityEngine.CrashReportingModule.dll
