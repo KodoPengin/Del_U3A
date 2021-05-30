@@ -1,6 +1,6 @@
 @echo off
 set "filename=%~nx0"
-for %%A in (%filename%) do title GameIndustry.eu - Spyware ^& Crashlytics Cleaner for Steam - v2.72 - %%~zA bytes
+for %%A in (%filename%) do title GameIndustry.eu - Spyware ^& Crashlytics Cleaner for Steam - v2.74 - %%~zA bytes
 SETLOCAL EnableExtensions DisableDelayedExpansion
 for /F %%a in ('echo prompt $E ^| cmd') do (
   set "ESC=%%a"
@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # This script deletes crashyltics, logs and spyware from the            #
 echo # Steamfolder and from related (game) folders, clean the cache folders  #
 echo # and deletes modding leftovers from custom.css files if necessary      #
-echo # (c) by GameIndustry.eu - 17 February 2021 - Version 2.72              #
+echo # (c) by GameIndustry.eu - 30 Mai 2021 - Version 2.74                   #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -153,19 +153,19 @@ del /s /f /q CrashReporter.exe >nul 2>nul
 del /s /f /q CrashUploader.Publish.exe.config >nul 2>nul
 del /s /f /q CrashReporter.exe.config >nul 2>nul
 del /s /f /q CrashReportClient.exe >nul 2>nul
+del /s /f /q UnrealCEFSubProcess.exe >nul 2>nul
 del /s /f /q CrashReportClient.pdb >nul 2>nul
 del /s /f /q CrashReporter.resources.dll >nul 2>nul
 del /s /f /q REDEngineErrorReporter.exe >nul 2>nul
 del /s /f /q abbey_crash_reporter.exe >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
-del /s /f /q UnityEngine.CrashReportingModule* >nul 2>nul
-del /s /f /q UnityEngine.PerformanceReportingModule.dll >nul 2>nul
-del /s /f /q Unity.MemoryProfiler.dll >nul 2>nul
-del /s /f /q UnityEngine.UnityConnectModule.dll >nul 2>nul
-del /s /f /q UnityEngine.UnityTestProtocolModule.dll >nul 2>nul
-del /s /f /q System.Diagnostics.StackTrace.dll >nul 2>nul
-del /s /f /q UnityEngine.SpatialTracking.dll >nul 2>nul
+::del /s /f /q UnityEngine.CrashReportingModule* >nul 2>nul
+::del /s /f /q UnityEngine.PerformanceReportingModule.dll >nul 2>nul
+::del /s /f /q Unity.MemoryProfiler.dll >nul 2>nul
+::del /s /f /q UnityEngine.UnityTestProtocolModule.dll >nul 2>nul
+::del /s /f /q System.Diagnostics.StackTrace.dll >nul 2>nul
+::del /s /f /q UnityEngine.SpatialTracking.dll >nul 2>nul
 
 ::Unity Analytics CrashHandler
 set ORIGINAL_DIR=%CD%
@@ -310,6 +310,9 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDate:!ESC![0m           !ESC![92mDescription:!ESC![0m
+echo 30.05.2021      Disabled some Unityfiles and rewritten the readmes
+echo 20.03.2021      Deleted UnityEngine.UnityConnectModule.dll
+echo 18.03.2021      Added UnrealCEFSubProcess.exe 
 echo 17.02.2021      Added Abbey Games Crashreporter
 echo 17.01.2021      Temporary deleted the hosts section and added more Unity Analytics stuff
 echo 15.01.2021      Added more Unity files to cleaning process
