@@ -26,10 +26,11 @@ Users who use their own layout modifications for Steam probably know this proced
 
 
 
------------------ 2. Installation -----------------
+----------------- 2. Installation & execution -----------------
 
-Copy the file del_u3a_en.bat into your Steam installation folder and/or additional library folder and run the file. To uninstall, simply delete the batch.
+Copy the file del_u3a_en.bat into your Steam installation folder and/or additional library folder and run the file. In the library folders, steam.cfg is not necessary and can be deleted. Remove the Steam.cfg in the installation directory of Steam itself only for client updates.
 
+If new games with the same services are installed after deleting the existing spyware files and crashlytics, the batch can be run again to remove these files as well.
 
 
 ----------------- 3. Deleted files -----------------
@@ -134,7 +135,8 @@ There is currently no better solution. UnityCrashhandler can be removed from you
 Source: https://gameindustry.eu/
 Author: Pengin
 Version: 2.74
-Date: 30.05.2021
+Date: 28.08.2021
+Readme: 12.10.2021
 
 File/s:
 del_u3a_en.bat

@@ -29,10 +29,11 @@ Um Steam wie gewohnt zu aktualisieren muss die Steam.cfg (temporär) aus dem Ins
 
 
 
------------------ 2. Installation -----------------
+----------------- 2. Installation & Ausführung -----------------
 
-Die Datei "del_u3a_de.bat" wird in das Hauptverzeichnis von Steam oder des angelegten Bibliothekordners kopiert und kann von dort ausgeführt werden. Zum entfernen, die Datei einfach löschen.
+Die Datei "del_u3a_de.bat" wird in das Hauptverzeichnis von Steam oder des angelegten Bibliothekordners kopiert und kann von dort ausgeführt werden. In den Bibliotheksordnern ist keine steam.cfg notwendig und kann gelöscht werden. Die Steam.cfg im Installationsverzeichnis von Steam selbst nur entfernen für Clientupdates.
 
+Werden nach dem Löschen der vorhanden Spywaredateien und Crashlytics neue Spiele mit denselben Diensten installiert, kann die Batch nochmal gestartet werden um auch diese Dateien zu entfernen.
 
 
 ----------------- 3. Dateien -----------------
@@ -134,7 +135,8 @@ Eine bessere Lösung gibt es derzeit nicht. Die UnityCrashhandler können ohne B
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.74
-Datum: 30.05.2021
+Datum: 28.08.2021
+Readme: 12.10.2021
 
 Datei/en:
 del_u3a_de.bat
