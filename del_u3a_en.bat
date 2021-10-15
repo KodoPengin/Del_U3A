@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # This script deletes crashyltics, logs and spyware from the            #
 echo # Steamfolder and from related (game) folders, clean the cache folders  #
 echo # and deletes modding leftovers from custom.css files if necessary      #
-echo # (c) by GameIndustry.eu - 30 Mai 2021 - Version 2.74                   #
+echo # (c) by GameIndustry.eu - 15 Oct 2021 - Version 2.75                   #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -144,6 +144,7 @@ del /s /f /q CrashUploader.Base.UI.dll >nul 2>nul
 del /s /f /q CrashUploader.Publish.exe >nul 2>nul
 del /s /f /q CrashUploader.Publish.exe.config >nul 2>nul
 del /s /f /q crashpad_handler.exe >nul 2>nul
+del /s /f /q CrashSender1402.exe >nul 2>nul
 del /s /f /q CrashSender1403.exe >nul 2>nul
 del /s /f /q crashrpt_lang.ini >nul 2>nul
 del /s /f /q CrashRpt1403.dll >nul 2>nul
@@ -158,6 +159,7 @@ del /s /f /q CrashReportClient.pdb >nul 2>nul
 del /s /f /q CrashReporter.resources.dll >nul 2>nul
 del /s /f /q REDEngineErrorReporter.exe >nul 2>nul
 del /s /f /q abbey_crash_reporter.exe >nul 2>nul
+del /s /f /q GameCrashUploader.exe >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
 ::del /s /f /q UnityEngine.CrashReportingModule* >nul 2>nul
@@ -310,6 +312,7 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDate:!ESC![0m           !ESC![92mDescription:!ESC![0m
+echo 15.10.2021      Added Amazon GameCrashUploader.exe to list
 echo 30.05.2021      Disabled some Unityfiles and rewritten the readmes
 echo 20.03.2021      Deleted UnityEngine.UnityConnectModule.dll
 echo 18.03.2021      Added UnrealCEFSubProcess.exe 

@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # Das Script entfernt Crashlytics, Logs und Analyticsdienste aus dem    #
 echo # Steam-Verzeichnis und dazugehîrigen (Spiele)verzeichnissen , leert    #
 echo # die Cache-Ordner und entfernt Modding RÅckstÑnde der custom.css       #
-echo # (c) by GameIndustry.eu - 30/05/2021 - Version 2.74                    #
+echo # (c) by GameIndustry.eu - 15/10/2021 - Version 2.75                    #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -144,6 +144,7 @@ del /s /f /q CrashUploader.Base.UI.dll >nul 2>nul
 del /s /f /q CrashUploader.Publish.exe >nul 2>nul
 del /s /f /q CrashUploader.Publish.exe.config >nul 2>nul
 del /s /f /q crashpad_handler.exe >nul 2>nul
+del /s /f /q CrashSender1402.exe >nul 2>nul
 del /s /f /q CrashSender1403.exe >nul 2>nul
 del /s /f /q crashrpt_lang.ini >nul 2>nul
 del /s /f /q CrashRpt1403.dll >nul 2>nul
@@ -158,6 +159,7 @@ del /s /f /q CrashReportClient.pdb >nul 2>nul
 del /s /f /q CrashReporter.resources.dll >nul 2>nul
 del /s /f /q REDEngineErrorReporter.exe >nul 2>nul
 del /s /f /q abbey_crash_reporter.exe >nul 2>nul
+del /s /f /q GameCrashUploader.exe >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
 ::del /s /f /q UnityEngine.CrashReportingModule* >nul 2>nul
@@ -311,6 +313,7 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDatum:!ESC![0m          !ESC![92mBeschreibung:!ESC![0m
+echo 15.10.2021      Amazon GameCrashUploader.exe hinzugefÅgt
 echo 30.05.2021      Readme Dateien umformatiert und ergÑnzt, Unitydateien deaktiviert
 echo 20.03.2021      UnityEngine.UnityConnectModule.dll gelîscht
 echo 18.03.2021      UnrealCEFSubProcess.exe hinzugefÅgt

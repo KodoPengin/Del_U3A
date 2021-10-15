@@ -1,4 +1,4 @@
-Readme für die Del3UA Spywarecleaner Batch - Version 2.74 - von Gameindustry.eu
+Readme für die Del3UA Spywarecleaner Batch - Version 2.75 - von Gameindustry.eu
 
 Inhalt:
 1. Beschreibung
@@ -81,6 +81,7 @@ CrashReportClient.pdb
 CrashReporter.resources.dll
 REDEngineErrorReporter.exe
 abbey_crash_reporter.exe
+GameCrashUploader.exe
 UnityCrashHandler32.exe
 UnityCrashHandler64.exe
 
@@ -97,7 +98,8 @@ UnityEngine.SpatialTracking.dll
 
 ----------------- 4. Letzte Änderungen -----------------
 
-- Readme Dateien umformatiert und erg„nzt, Unitydateien deaktiviert
+- Amazon's GameCrashUploader.exe hinzugefügt
+- Readme Dateien umformatiert und ergänzt, Unitydateien deaktiviert
 - UnityEngine.UnityConnectModule.dll entfernt
 - UnrealCEFSubProcess.exe hinzugefügt
 - Abbey Games Crashreporter hinzugefügt
@@ -134,10 +136,10 @@ Eine bessere Lösung gibt es derzeit nicht. Die UnityCrashhandler können ohne B
 
 Quelle: https://gameindustry.eu/
 Author: Pengin
-Version: 2.74
-Datum: 28.08.2021
-Readme: 12.10.2021
+Version: 2.75
+Datum: 15.10.2021
+Readme: 15.10.2021
 
 Datei/en:
 del_u3a_de.bat
-Hash: 18266b36566536e3822ea973ae4bada6456bc247f8ddad5a97ea41458a1f0f9d
+Hash: bb7192a39f2c56e5906d15d982c7ae1f6ee417d86589e7fd0e781cdf9f83e966
