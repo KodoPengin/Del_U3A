@@ -159,9 +159,9 @@ del /s /f /q CrashReportClient.pdb >nul 2>nul
 del /s /f /q CrashReporter.resources.dll >nul 2>nul
 del /s /f /q REDEngineErrorReporter.exe >nul 2>nul
 del /s /f /q abbey_crash_reporter.exe >nul 2>nul
-del /s /f /q GameCrashUploader.exe >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
+::del /s /f /q GameCrashUploader.exe >nul 2>nul
 ::del /s /f /q UnityEngine.CrashReportingModule* >nul 2>nul
 ::del /s /f /q UnityEngine.PerformanceReportingModule.dll >nul 2>nul
 ::del /s /f /q Unity.MemoryProfiler.dll >nul 2>nul

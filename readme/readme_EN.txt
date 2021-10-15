@@ -95,7 +95,7 @@ UnityEngine.SpatialTracking.dll
 
 ----------------- 4. Latest changes -----------------
 
-- Added Amazon GameCrashUploader.exe to list
+- Added Amazon GameCrashUploader workaround, see Problems
 - Disabled some Unityfiles and rewritten the readmes
 - Deleted UnityEngine.UnityConnectModule.dll
 - Added UnrealCEFSubProcess.exe
@@ -129,7 +129,8 @@ The files Unity.MemoryProfiler.dll, UnityEngine.CrashReportingModule.dll, UnityE
 
 There is currently no better solution. UnityCrashhandler can be removed from your system without hesitation.
 
-
+For GameCrashUploader.exe it is sufficient to delete the file and create a text file named GameCrashUploader in the same directory and save it as exe. The file then has 0kb size and the product still runs.
+Since the file size is not checked, it is thus sufficient to fool the respective game (New World).
 
 ----------------- 6. Source, Hashes -----------------
 
@@ -142,4 +143,4 @@ Readme: 15.10.2021
 
 File/s:
 del_u3a_en.bat
-Hash: 7da80fc4a10be829cd0e3cb60233b3a4114bb826f11af4e1dcfb8f864c014c7f
+Hash: c661219b6b100ed8f8004818d51ec1a43379201fa90ebe0e0564a2a9cc84448c

@@ -81,11 +81,11 @@ CrashReportClient.pdb
 CrashReporter.resources.dll
 REDEngineErrorReporter.exe
 abbey_crash_reporter.exe
-GameCrashUploader.exe
 UnityCrashHandler32.exe
 UnityCrashHandler64.exe
 
 Mehr Info - 5. Mögliche Probleme
+GameCrashUploader.exe
 UnityEngine.CrashReportingModule.dll
 UnityEngine.CrashReportingModule.dll.mdb
 UnityEngine.PerformanceReportingModule.dll
@@ -98,7 +98,7 @@ UnityEngine.SpatialTracking.dll
 
 ----------------- 4. Letzte Änderungen -----------------
 
-- Amazon's GameCrashUploader.exe hinzugefügt
+- Amazon's GameCrashUploader unter mögliche Probleme hinzugefügt
 - Readme Dateien umformatiert und ergänzt, Unitydateien deaktiviert
 - UnityEngine.UnityConnectModule.dll entfernt
 - UnrealCEFSubProcess.exe hinzugefügt
@@ -130,7 +130,8 @@ Die Dateien Unity.MemoryProfiler.dll, UnityEngine.CrashReportingModule.dll, Unit
 
 Eine bessere Lösung gibt es derzeit nicht. Die UnityCrashhandler können ohne Bedenken vom eigenen System entfernt werden.
 
-
+Für die GameCrashUploader.exe reicht es aus die Datei zu löschen und imselben Verzeichnis eine Textdatei mit dem Namen GameCrashUploader zu erstellen und als Exe zu speichern. Die Datei hat dann 0kb Größe und das Produkt läuft dennoch.
+Da die Dateigröße nicht überprüft wird, reicht es somit aus, dem jeweiligem Spiel (New World) etwas vorzugaukeln.
 
 ----------------- 6. Quellenangabe, Hashes -----------------
 
@@ -142,4 +143,4 @@ Readme: 15.10.2021
 
 Datei/en:
 del_u3a_de.bat
-Hash: bb7192a39f2c56e5906d15d982c7ae1f6ee417d86589e7fd0e781cdf9f83e966
+Hash: 508cb61c0edc0d935de3081af5a5e25882a986abc949900dee9df394ef779bf9
