@@ -14,11 +14,10 @@ English:
 - readme_EN.txt
 
 # Installation & readme
-- Copy the batch of your choice into your Steam folder and run the "del_u3a_en.bat" or "del_u3a_de.bat"
+- Copy the batch of your choice into your Steam folder and/or library folder and run the "del_u3a_en.bat" or "del_u3a_de.bat"
 
 # Special features:
 - Option to delete Crashlytics from Unity Technologies, ApS, Microsoft Corporation, Google LLC, Avalanche Studios and Epic Games, Inc.
-- Option to block some basic spyware with Windows hosts
 - Option to clean your Steam folders (Library Cache, Picture, Download and Shadercache)
 - Option to clean your Steam HTML Cache
 
