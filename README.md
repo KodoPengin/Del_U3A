@@ -74,4 +74,4 @@ Visit <a href="https://github.com/KodoPengin/PenginUI">PenginUI - Custom Steam S
 
 Collection of IP Adresses
 List of Webserver Security related Ipv4 Adresses
-Visit <a href="https://github.com/KodoPengin/PenginUI">PenginUI - Custom Steam Skin</a>
+Visit <a href="https://github.com/KodoPengin/Collection-of-IP-addresses">Collection-of-IP-addresses</a>
