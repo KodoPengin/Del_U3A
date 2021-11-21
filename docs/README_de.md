@@ -8,7 +8,7 @@
   <span> · </span>
   Support: <a href="https://github.com/KodoPengin/Del_U3A/discussions">Diskussionen</a>
   <span> · </span>
-  <a href="../docs/README.md">Deutsch</a>
+ <a href="../README.md">Englisch</a>
 </h3>
  <p align="center">
     <a href="https://github.com/KodoPengin/Del_U3A/watchers"><img alt="Watchers" src="https://img.shields.io/github/watchers/KodoPengin/Del_U3A.svg?color=0088ff" /></a>
@@ -66,12 +66,12 @@ Steamgruppe & Support: <a href="https://steamcommunity.com/groups/penguindome/">
 # Andere Projekte
 Hosts Templates
 Einzigartige Hostvorlagen zur Verbesserung der eigenen Privatsphäre in Spielen, Websites und regulärer Software
-Visit <a href="https://github.com/KodoPengin/GameIndustry-hosts-Template">GameIndustry hosts Templates</a>
+Besuche <a href="https://github.com/KodoPengin/GameIndustry-hosts-Template">GameIndustry hosts Templates</a>
 
 PenginUI (Steam Skin)
 Minimaler Steam-Skin mit Fokus aufs Wesentliche (WIP)
-Visit <a href="https://github.com/KodoPengin/PenginUI">PenginUI - Custom Steam Skin</a>
+Besuche <a href="https://github.com/KodoPengin/PenginUI">PenginUI - Custom Steam Skin</a>
 
 Sammlung von IP-Adressen
 Ipv4 Adressen zur Ergänzung der eigenen Serversicherheit
-Visit <a href="https://github.com/KodoPengin/Collection-of-IP-addresses">Sammlung von IPv4 Adressen</a>
+Besuche <a href="https://github.com/KodoPengin/Collection-of-IP-addresses">Sammlung von IPv4 Adressen</a>
