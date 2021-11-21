@@ -64,14 +64,14 @@ Website & Support: <a href="https://www.gameindustry.eu">GameIndustry.eu</a> and
 Steamgruppe & Support: <a href="https://steamcommunity.com/groups/penguindome/">Spyware in games? No thanks!</a>
 
 # Andere Projekte
-Hosts Templates
-Einzigartige Hostvorlagen zur Verbesserung der eigenen Privatsphäre in Spielen, Websites und regulärer Software
+Hosts Templates<br>
+Einzigartige Hostvorlagen zur Verbesserung der eigenen Privatsphäre in Spielen, Websites und regulärer Software<br>
 Besuche <a href="https://github.com/KodoPengin/GameIndustry-hosts-Template">GameIndustry hosts Templates</a>
 
-PenginUI (Steam Skin)
-Minimaler Steam-Skin mit Fokus aufs Wesentliche (WIP)
+PenginUI (Steam Skin)<br>
+Minimaler Steam-Skin mit Fokus aufs Wesentliche (WIP)<br>
 Besuche <a href="https://github.com/KodoPengin/PenginUI">PenginUI - Custom Steam Skin</a>
 
-Sammlung von IP-Adressen
-Ipv4 Adressen zur Ergänzung der eigenen Serversicherheit
+Sammlung von IP-Adressen<br>
+Ipv4 Adressen zur Ergänzung der eigenen Serversicherheit<br>
 Besuche <a href="https://github.com/KodoPengin/Collection-of-IP-addresses">Sammlung von IPv4 Adressen</a>
