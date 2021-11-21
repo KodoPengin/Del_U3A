@@ -56,6 +56,13 @@ English:
 ## 🐞 Bugs, Mistakes, questions:
 Even me is not perfect and there may be wrong entries or spelling mistakes. If so, do not hesitate to contact me ASAP - Please open a ticket, contact me in Steam or about my website. Corrections (if needed) are quickly implemented.
 
+## © Copyright, Support & License
+The Del_U3A Script was developed and is maintained by © gameindustry.eu<br><br>
+If any information in the file differs from the original, the file is not from the official source
+
+Website & Support: <a href="https://www.gameindustry.eu">GameIndustry.eu</a> and <a href="https://www.gameindustry.eu/u/kontakt/">Contact site</a><br>
+Steam Group & Support: <a href="https://steamcommunity.com/groups/penguindome/">Spyware in games? No thanks!</a>
+
 # Other projects
 Hosts Templates
 Unique host templates to enhance own privacy in games, websites and regulary software
