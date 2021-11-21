@@ -28,7 +28,8 @@ Users who use their own layout modifications for Steam probably know this proced
 
 ----------------- 2. Installation & execution -----------------
 
-Copy the file del_u3a_en.bat into your Steam installation folder and/or additional library folder and run the file. In the library folders, steam.cfg is not necessary and can be deleted. Remove the Steam.cfg in the installation directory of Steam itself only for client updates.
+Copy the file del_u3a_en.bat into your Steam installation folder and/or additional library folder and run the file. In the library folders, steam.cfg is not necessary and can be deleted.
+Remove the Steam.cfg in the installation directory of Steam itself only for client updates.
 
 If new games with the same services are installed after deleting the existing spyware files and crashlytics, the batch can be run again to remove these files as well.
 
@@ -78,6 +79,7 @@ CrashReportClient.pdb
 CrashReporter.resources.dll
 REDEngineErrorReporter.exe
 abbey_crash_reporter.exe
+crashmsg.exe
 GameCrashUploader.exe
 UnityCrashHandler32.exe
 UnityCrashHandler64.exe
@@ -138,9 +140,9 @@ Since the file size is not checked, it is thus sufficient to fool the respective
 Source: https://gameindustry.eu/
 Author: Pengin
 Version: 2.75
-Date: 15.10.2021
-Readme: 15.10.2021
+Date: 21.11.2021
+Readme: 21.11.2021
 
 File/s:
 del_u3a_en.bat
-Hash: c661219b6b100ed8f8004818d51ec1a43379201fa90ebe0e0564a2a9cc84448c
+Hash: 0f7c772daac8d05d705b53a629a8209f0c2d7f87139ed06379199e6af68b204e

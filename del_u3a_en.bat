@@ -1,6 +1,6 @@
 @echo off
 set "filename=%~nx0"
-for %%A in (%filename%) do title GameIndustry.eu - Spyware ^& Crashlytics Cleaner for Steam - v2.74 - %%~zA bytes
+for %%A in (%filename%) do title GameIndustry.eu - Spyware ^& Crashlytics Cleaner for Steam - v2.75 - %%~zA
 SETLOCAL EnableExtensions DisableDelayedExpansion
 for /F %%a in ('echo prompt $E ^| cmd') do (
   set "ESC=%%a"
@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # This script deletes crashyltics, logs and spyware from the            #
 echo # Steamfolder and from related (game) folders, clean the cache folders  #
 echo # and deletes modding leftovers from custom.css files if necessary      #
-echo # (c) by GameIndustry.eu - 15 Oct 2021 - Version 2.75                   #
+echo # (c) by GameIndustry.eu - 21 Nov 2021 - Version 2.75                   #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -159,6 +159,7 @@ del /s /f /q CrashReportClient.pdb >nul 2>nul
 del /s /f /q CrashReporter.resources.dll >nul 2>nul
 del /s /f /q REDEngineErrorReporter.exe >nul 2>nul
 del /s /f /q abbey_crash_reporter.exe >nul 2>nul
+del /s /f /q crashmsg.exe >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
 ::del /s /f /q GameCrashUploader.exe >nul 2>nul
@@ -306,12 +307,14 @@ Pause
 
 :Version
 @cls
-echo !ESC![92mFilename:!ESC![0m %~nx0
+set "filename=%~nx0"
+for %%A in (%filename%) do echo.!ESC![92mFilename:!ESC![0m %~nx0 - %%~zA bytes
 @echo off
 echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDate:!ESC![0m           !ESC![92mDescription:!ESC![0m
+echo 21.11.2021      Added crashmsg.exe
 echo 15.10.2021      Added Amazon GameCrashUploader.exe to list
 echo 30.05.2021      Disabled some Unityfiles and rewritten the readmes
 echo 20.03.2021      Deleted UnityEngine.UnityConnectModule.dll
