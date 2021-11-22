@@ -83,11 +83,12 @@ CrashReporter.resources.dll
 REDEngineErrorReporter.exe
 abbey_crash_reporter.exe
 crashmsg.exe
+output_log.txt
 UnityCrashHandler32.exe
 UnityCrashHandler64.exe
 
 Mehr Info - 5. Mögliche Probleme
-GameCrashUploader.exe
+GameCrashUploader.exe (GameCrashUploader.exe muss manuell gelöscht und anstelle dessen eine Dummy-Datei mit demselben Namen und 0KB Größe erstellt werden)
 UnityEngine.CrashReportingModule.dll
 UnityEngine.CrashReportingModule.dll.mdb
 UnityEngine.PerformanceReportingModule.dll
@@ -100,6 +101,8 @@ UnityEngine.SpatialTracking.dll
 
 ----------------- 4. Letzte Änderungen -----------------
 
+- output_log.txt (übergreifend)
+- Apex Legend crashmsg.exe hinzugefügt
 - Amazon's GameCrashUploader unter mögliche Probleme hinzugefügt
 - Readme Dateien umformatiert und ergänzt, Unitydateien deaktiviert
 - UnityEngine.UnityConnectModule.dll entfernt
@@ -140,9 +143,9 @@ Da die Dateigröße nicht überprüft wird, reicht es somit aus, dem jeweiligem 
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.75
-Datum: 21.11.2021
-Readme: 21.11.2021
+Datum: 22.11.2021
+Readme: 22.11.2021
 
 Datei/en:
 del_u3a_de.bat
-Hash: c3e1b0feac19d4af72a5716d02b1f17034a085d2aa1e19e1f769085aa105f94e
+Hash: 3d12ae78c8417c628be796dc8c99ee0e620e00786221088a1251a25a6b882ffc

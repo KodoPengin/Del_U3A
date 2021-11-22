@@ -160,6 +160,7 @@ del /s /f /q CrashReporter.resources.dll >nul 2>nul
 del /s /f /q REDEngineErrorReporter.exe >nul 2>nul
 del /s /f /q abbey_crash_reporter.exe >nul 2>nul
 del /s /f /q crashmsg.exe >nul 2>nul
+del /s /f /q output_log.txt >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
 ::del /s /f /q GameCrashUploader.exe >nul 2>nul
@@ -315,6 +316,7 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDatum:!ESC![0m          !ESC![92mBeschreibung:!ESC![0m
+echo 22.11.2021      output_log.txt hinzugefÅgt
 echo 21.11.2021      crashmsg.exe hinzugefÅgt
 echo 15.10.2021      Amazon GameCrashUploader.exe hinzugefÅgt
 echo 30.05.2021      Readme Dateien umformatiert und ergÑnzt, Unitydateien deaktiviert

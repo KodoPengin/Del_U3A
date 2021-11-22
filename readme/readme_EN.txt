@@ -80,11 +80,12 @@ CrashReporter.resources.dll
 REDEngineErrorReporter.exe
 abbey_crash_reporter.exe
 crashmsg.exe
-GameCrashUploader.exe
+output_log.txt
 UnityCrashHandler32.exe
 UnityCrashHandler64.exe
 
 See section - 5. Problems
+GameCrashUploader.exe (Manually delete GameCrashUploader.exe and instead create a dummy file with the same name and 0kb size)
 UnityEngine.CrashReportingModule.dll
 UnityEngine.CrashReportingModule.dll.mdb
 UnityEngine.PerformanceReportingModule.dll
@@ -97,6 +98,8 @@ UnityEngine.SpatialTracking.dll
 
 ----------------- 4. Latest changes -----------------
 
+- Added output_log.txt (crossover)
+- Added Apex Legend crashmsg.exe
 - Added Amazon GameCrashUploader workaround, see Problems
 - Disabled some Unityfiles and rewritten the readmes
 - Deleted UnityEngine.UnityConnectModule.dll
@@ -140,9 +143,9 @@ Since the file size is not checked, it is thus sufficient to fool the respective
 Source: https://gameindustry.eu/
 Author: Pengin
 Version: 2.75
-Date: 21.11.2021
-Readme: 21.11.2021
+Date: 22.11.2021
+Readme: 22.11.2021
 
 File/s:
 del_u3a_en.bat
-Hash: 0f7c772daac8d05d705b53a629a8209f0c2d7f87139ed06379199e6af68b204e
+Hash: b0e06815e5046bfb25bf249685b17147d2d46947a207ed5a5fba6bcc85b6934c
