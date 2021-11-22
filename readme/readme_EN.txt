@@ -98,7 +98,7 @@ UnityEngine.SpatialTracking.dll
 
 ----------------- 4. Latest changes -----------------
 
-- Added output_log.txt (crossover)
+- Added output_log.txt (crossover), Crashdump fix
 - Added Apex Legend crashmsg.exe
 - Added Amazon GameCrashUploader workaround, see Problems
 - Disabled some Unityfiles and rewritten the readmes
@@ -148,4 +148,4 @@ Readme: 22.11.2021
 
 File/s:
 del_u3a_en.bat
-Hash: b0e06815e5046bfb25bf249685b17147d2d46947a207ed5a5fba6bcc85b6934c
+Hash: 380d7fe0f5841d2ebddb7310f41bea9954e727acdbd470ba8a8c8c59f5b5c2ca

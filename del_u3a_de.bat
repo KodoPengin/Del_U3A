@@ -134,7 +134,10 @@ IF EXIST "WriteMiniDump.exe" del "WriteMiniDump.exe" /f /q
 
 echo !ESC![92m2.!ESC![0m Entferne (sofern vorhanden) Crashdumps im Systemverzeichnis....
 ::Entferne Crashdumps
-IF EXIST "%USERPROFILE%\AppData\Local\CrashDumps\*.*" del "%UserProfile%\AppData\Local\CrashDumps\*.*" /q
+if exist "%userprofile%\AppData\Local\CrashDumps\" rd /q /s "%userprofile%\AppData\Local\CrashDumps\" >nul 2>&1
+if exist "%userprofile%\AppData\Local\CEF\User Data\Crashpad\" rd /q /s "%userprofile%\AppData\Local\CEF\User Data\Crashpad\" >nul 2>&1
+if exist "%userprofile%\AppData\Local\CEF\User Data\CrashpadMetrics-active.pma" del "%userprofile%\AppData\Local\CEF\User Data\CrashpadMetrics-active.pma" /f /q
+if exist "%userprofile%\AppData\Local\CrashReportClient\" rd /q /s "%userprofile%\AppData\Local\CrashReportClient\" >nul 2>&1
 
 echo !ESC![92m3.!ESC![0m Entferne Crashhandler, Crashlytics, Logs, Dumps  ^& nicht benîtigte Dateien von Drittanbietern....
 ::Crashlytics von Drittanbietern
@@ -186,13 +189,14 @@ for /f "delims=" %%i in ('dir /a-d /s /b 2^> nul ^ UnityCrashHandler*.exe') do d
 chdir /d %ORIGINAL_DIR%
 
 ::Unity Technologies
-for /f "delims=" %%F in ('dir /b /ad /s "%USERPROFILE%\AppData\LocalLow\Unity.*" 2^>nul') do rd /s /q "%%F"
+for /f "delims=" %%F in ('dir /b /ad /s "%USERPROFILE%\AppData\LocalLow\Unity.*" 2^>nul') do rd /s /q "%%F" >nul 2>nul
 set ORIGINAL_DIR=%CD%
 set folder="%USERPROFILE%\AppData\LocalLow\"
 IF EXIST "%folder%" (
 cd /d %folder%
-for /f "delims=" %%i in ('dir /a-d /s /b 2^> nul ^ *.log') do del "%%~i"
+for /f "delims=" %%i in ('dir /a-d /s /b 2^> nul ^ *.log') do del "%%~i" >nul 2>nul
 )
+chdir /d %ORIGINAL_DIR%
 echo/
 echo !ESC![92mFertig :]!ESC![0m
 echo/
@@ -316,7 +320,7 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDatum:!ESC![0m          !ESC![92mBeschreibung:!ESC![0m
-echo 22.11.2021      output_log.txt hinzugefÅgt
+echo 22.11.2021      output_log.txt hinzugefÅgt, Crashdump fix
 echo 21.11.2021      crashmsg.exe hinzugefÅgt
 echo 15.10.2021      Amazon GameCrashUploader.exe hinzugefÅgt
 echo 30.05.2021      Readme Dateien umformatiert und ergÑnzt, Unitydateien deaktiviert
