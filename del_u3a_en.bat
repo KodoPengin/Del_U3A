@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # This script deletes crashyltics, logs and spyware from the            #
 echo # Steamfolder and from related (game) folders, clean the cache folders  #
 echo # and deletes modding leftovers from custom.css files if necessary      #
-echo # (c) by GameIndustry.eu - 21 Nov 2021 - Version 2.75                   #
+echo # (c) by GameIndustry.eu - 06 Dez 2021 - Version 2.75                   #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -138,6 +138,7 @@ if exist "%userprofile%\AppData\Local\CrashDumps\" rd /q /s "%userprofile%\AppDa
 if exist "%userprofile%\AppData\Local\CEF\User Data\Crashpad\" rd /q /s "%userprofile%\AppData\Local\CEF\User Data\Crashpad\" >nul 2>&1
 if exist "%userprofile%\AppData\Local\CEF\User Data\CrashpadMetrics-active.pma" del "%userprofile%\AppData\Local\CEF\User Data\CrashpadMetrics-active.pma" /f /q
 if exist "%userprofile%\AppData\Local\CrashReportClient\" rd /q /s "%userprofile%\AppData\Local\CrashReportClient\" >nul 2>&1
+if exist "%userprofile%\AppData\Local\T2GP Launcher\app-1.0.4.2070\crashagent64.exe" del "%userprofile%\AppData\Local\T2GP Launcher\app-1.0.4.2070\crashagent64.exe" /f /q
 
 echo !ESC![92m3.!ESC![0m Delete Crashhandler, CrashHandler, Logs, Dumps ^& unnecessary stuff from Third party companies....
 ::Crashlytics from Third party companies
@@ -164,6 +165,7 @@ del /s /f /q REDEngineErrorReporter.exe >nul 2>nul
 del /s /f /q abbey_crash_reporter.exe >nul 2>nul
 del /s /f /q crashmsg.exe >nul 2>nul
 del /s /f /q output_log.txt >nul 2>nul
+del /s /f /q telemetry64.dll >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
 ::del /s /f /q GameCrashUploader.exe >nul 2>nul
@@ -318,6 +320,7 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDate:!ESC![0m           !ESC![92mDescription:!ESC![0m
+echo 06.12.2021      Mafia 3 telemetry.dll and crashagent64.exe
 echo 22.11.2021      Added output_log.txt, Crashdump fix
 echo 21.11.2021      Added crashmsg.exe
 echo 15.10.2021      Added Amazon GameCrashUploader.exe to list

@@ -42,6 +42,7 @@ Following files and folders will be deleted:
 %username%\Appdata\Local\CrashDumps\*.*
 %USERPROFILE%\AppData\LocalLow\Unity.
 %USERPROFILE%\AppData\LocalLow\*.log
+%USERPROFILE%\AppData\Local\T2GP Launcher\app-1.0.4.2070\crashagent64.exe
 
 - Steam
 bin\cef\cef.win7\*.*
@@ -81,6 +82,7 @@ REDEngineErrorReporter.exe
 abbey_crash_reporter.exe
 crashmsg.exe
 output_log.txt
+telemetry64.dll
 UnityCrashHandler32.exe
 UnityCrashHandler64.exe
 
@@ -98,6 +100,7 @@ UnityEngine.SpatialTracking.dll
 
 ----------------- 4. Latest changes -----------------
 
+- Mafia 3 telemetry.dll and crashagent64.exe
 - Added output_log.txt (crossover), Crashdump fix
 - Added Apex Legend crashmsg.exe
 - Added Amazon GameCrashUploader workaround, see Problems
@@ -143,9 +146,8 @@ Since the file size is not checked, it is thus sufficient to fool the respective
 Source: https://gameindustry.eu/
 Author: Pengin
 Version: 2.75
-Date: 22.11.2021
-Readme: 22.11.2021
+Date: 06.12.2021
 
 File/s:
 del_u3a_en.bat
-Hash: 380d7fe0f5841d2ebddb7310f41bea9954e727acdbd470ba8a8c8c59f5b5c2ca
+Hash: 1923d96c279eecbff2f7758fb589340e63b48735505e2d53192c7fbf5d76931f
