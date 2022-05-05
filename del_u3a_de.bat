@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # Das Script entfernt Crashlytics, Logs und Analyticsdienste aus dem    #
 echo # Steam-Verzeichnis und dazugehîrigen (Spiele)verzeichnissen , leert    #
 echo # die Cache-Ordner und entfernt Modding RÅckstÑnde der custom.css       #
-echo # (c) by GameIndustry.eu - 06/12/2021 - Version 2.75                    #
+echo # (c) by GameIndustry.eu - 05/05/2022 - Version 2.75                    #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -158,6 +158,7 @@ del /s /f /q CrashReporter.exe >nul 2>nul
 del /s /f /q CrashUploader.Publish.exe.config >nul 2>nul
 del /s /f /q CrashReporter.exe.config >nul 2>nul
 del /s /f /q CrashReportClient.exe >nul 2>nul
+del /s /f /q DLogUploader.exe >nul 2>nul
 del /s /f /q UnrealCEFSubProcess.exe >nul 2>nul
 del /s /f /q CrashReportClient.pdb >nul 2>nul
 del /s /f /q CrashReporter.resources.dll >nul 2>nul
@@ -322,6 +323,7 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDatum:!ESC![0m          !ESC![92mBeschreibung:!ESC![0m
+echo 05.05.2022      Activision DLogUploader.exe
 echo 06.12.2021      Mafia 3 telemetry.dll und crashagent64.exe
 echo 22.11.2021      output_log.txt hinzugefÅgt, Crashdump fix
 echo 21.11.2021      crashmsg.exe hinzugefÅgt

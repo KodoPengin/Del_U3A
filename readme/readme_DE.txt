@@ -103,6 +103,7 @@ UnityEngine.SpatialTracking.dll
 
 ----------------- 4. Letzte Änderungen -----------------
 
+- Activision DLogUploader.exe
 - Mafia 3 telemetry.dll und crashagent64.exe
 - output_log.txt (übergreifend), Crashdump fix
 - Apex Legend crashmsg.exe hinzugefügt
@@ -146,8 +147,8 @@ Da die Dateigröße nicht überprüft wird, reicht es somit aus, dem jeweiligem 
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.75
-Datum: 06.12.2021
+Datum: 05.05.2022
 
 Datei/en:
 del_u3a_de.bat
-Hash: 54c744cbfb6b0ef883fcab221c897bcfcdcb33af6f611d39380846887eacb25c
+Hash: deba6729fc1fc87a2bbce379e2557a06518495b8169bc43a452e88b308e90872

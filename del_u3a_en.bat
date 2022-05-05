@@ -12,7 +12,7 @@ echo -------------------------------------------------------------------------
 echo # This script deletes crashyltics, logs and spyware from the            #
 echo # Steamfolder and from related (game) folders, clean the cache folders  #
 echo # and deletes modding leftovers from custom.css files if necessary      #
-echo # (c) by GameIndustry.eu - 06 Dez 2021 - Version 2.75                   #
+echo # (c) by GameIndustry.eu - 05 Mai 2022 - Version 2.75                   #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -158,6 +158,7 @@ del /s /f /q CrashReporter.exe >nul 2>nul
 del /s /f /q CrashUploader.Publish.exe.config >nul 2>nul
 del /s /f /q CrashReporter.exe.config >nul 2>nul
 del /s /f /q CrashReportClient.exe >nul 2>nul
+del /s /f /q DLogUploader.exe >nul 2>nul
 del /s /f /q UnrealCEFSubProcess.exe >nul 2>nul
 del /s /f /q CrashReportClient.pdb >nul 2>nul
 del /s /f /q CrashReporter.resources.dll >nul 2>nul
@@ -320,6 +321,7 @@ echo |set /p ="!ESC![92mHash:!ESC![0m "
 CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo !ESC![92mDate:!ESC![0m           !ESC![92mDescription:!ESC![0m
+echo 05.05.2022      Activision DLogUploader.exe
 echo 06.12.2021      Mafia 3 telemetry.dll and crashagent64.exe
 echo 22.11.2021      Added output_log.txt, Crashdump fix
 echo 21.11.2021      Added crashmsg.exe
