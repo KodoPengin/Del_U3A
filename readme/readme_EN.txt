@@ -1,4 +1,4 @@
-Readme für die Del3UA Spywarecleaner Batch - Version 2.75 - von Gameindustry.eu
+Readme für die Del3UA Spywarecleaner Batch - Version 2.76 - von Gameindustry.eu
 
 Inhalt:
 1. Description
@@ -83,6 +83,9 @@ abbey_crash_reporter.exe
 crashmsg.exe
 output_log.txt
 telemetry64.dll
+BsSndRpt.exe
+BugSplatRc.dll
+BsUnityCrashHandler.exe
 UnityCrashHandler32.exe
 UnityCrashHandler64.exe
 
@@ -100,6 +103,7 @@ UnityEngine.SpatialTracking.dll
 
 ----------------- 4. Latest changes -----------------
 
+- Several fixes, delete empty folders, new crashlytics
 - Activision DLogUploader.exe
 - Mafia 3 telemetry.dll and crashagent64.exe
 - Added output_log.txt (crossover), Crashdump fix
@@ -146,9 +150,10 @@ Since the file size is not checked, it is thus sufficient to fool the respective
 
 Source: https://gameindustry.eu/
 Author: Pengin
-Version: 2.75
-Date: 05.05.2022
+Version: 2.76
+Date: 28.12.2022
 
 File/s:
 del_u3a_en.bat
-Hash: 9b79b6c932b0e99e5f5945fdb462fa940b4a520c85b42f080a8b240150b08ac9
+Hash: e7e222710390da77ae925c5f436a0b15a03e3b3a3da808ad64d2c20e4b4b04d1
+CRC32: 22cd8898

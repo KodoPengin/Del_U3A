@@ -1,6 +1,7 @@
 @echo off
 set "filename=%~nx0"
-for %%A in (%filename%) do title GameIndustry.eu - Spyware ^& Crashlytics Cleaner fÅr Steam - v2.75 - %%~zA
+SET version="v2.76"
+for %%A in (%filename%) do title GameIndustry.eu - Spyware ^& Crashlytics Cleaner fÅr Steam - %version% - %%~zA
 SETLOCAL EnableExtensions DisableDelayedExpansion
 for /F %%a in ('echo prompt $E ^| cmd') do (
   set "ESC=%%a"
@@ -12,7 +13,7 @@ echo -------------------------------------------------------------------------
 echo # Das Script entfernt Crashlytics, Logs und Analyticsdienste aus dem    #
 echo # Steam-Verzeichnis und dazugehîrigen (Spiele)verzeichnissen , leert    #
 echo # die Cache-Ordner und entfernt Modding RÅckstÑnde der custom.css       #
-echo # (c) by GameIndustry.eu - 05/05/2022 - Version 2.75                    #
+echo # (c) by GameIndustry.eu - 28/12/2022 - %version%                         #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -80,6 +81,9 @@ echo/
 echo !ESC![92mHauptmenÅ!ESC![0m
 echo 6) Versionshistorie
 echo 7) Beenden
+echo/
+echo !ESC![92mLinks!ESC![0m
+echo 8) öber das Script
 echo.
 set /p navi=Eingabe:
 if "%navi%"=="1" goto Steam
@@ -90,6 +94,7 @@ if "%navi%"=="5" goto CF_Del
 cls
 if "%navi%"=="6" goto Version
 if "%navi%"=="7" goto exit
+if "%navi%"=="8" goto about
 goto home
 
 :Steam
@@ -97,6 +102,7 @@ cls
 ::Beende Tasks, sofern diese offen sind
 echo/
 echo Aktive Steamprozesse werden automatisch geschlossen...
+echo !ESC![31mDer Vorgang kann je nach Grî·e und Menge der gefundenen Ordner etwas dauern.!ESC![0m
 ::Wenn offen, beende Steam
 taskkill /F /T /IM steam.exe >nul 2>&1
 
@@ -125,6 +131,10 @@ IF EXIST "logs\" RMDIR "logs\" /s /q
 IF EXIST ".crash" del ".crash" /q
 IF EXIST "bin\cef\cef.win7x64\crash_reporter.cfg" del "bin\cef\cef.win7x64\crash_reporter.cfg" /q
 IF EXIST "bin\cef\cef.win7x64\debug.log" del "bin\cef\cef.win7x64\debug.log" /q
+IF EXIST "bin\secure_desktop_capture.exe" del "bin\secure_desktop_capture.exe" /f /q
+IF EXIST "bin\secure_desktop_capture.zip" del "bin\secure_desktop_capture.zip" /f /q
+IF EXIST "bin\steam_monitor.exe" del "bin\steam_monitor.exe" /f /q
+IF EXIST "package\steam_client_metrics.bin" del "package\steam_client_metrics.bin" /f /q
 IF EXIST "crashhandler64.dll" del "crashhandler64.dll" /f /q
 IF EXIST "crashhandler.dll" del "crashhandler.dll" /f /q
 IF EXIST "crashhandler.dll.old" del "crashhandler.dll.old" /f /q
@@ -139,8 +149,12 @@ if exist "%userprofile%\AppData\Local\CEF\User Data\Crashpad\" rd /q /s "%userpr
 if exist "%userprofile%\AppData\Local\CEF\User Data\CrashpadMetrics-active.pma" del "%userprofile%\AppData\Local\CEF\User Data\CrashpadMetrics-active.pma" /f /q
 if exist "%userprofile%\AppData\Local\CrashReportClient\" rd /q /s "%userprofile%\AppData\Local\CrashReportClient\" >nul 2>&1
 if exist "%userprofile%\AppData\Local\T2GP Launcher\app-1.0.4.2070\crashagent64.exe" del "%userprofile%\AppData\Local\T2GP Launcher\app-1.0.4.2070\crashagent64.exe" /f /q
+if exist "%userprofile%\AppData\Local\GameAnalytics\" rd /q /s "%userprofile%\AppData\Local\GameAnalytics\" >nul 2>&1
+if exist "%userprofile%\AppData\Local\UnrealEngine\" rd /q /s "%userprofile%\AppData\Local\UnrealEngine\" >nul 2>&1
+if exist "%userprofile%\AppData\Local\UniSDK\" rd /q /s "%userprofile%\AppData\Local\UniSDK\" >nul 2>&1
+if exist "%userprofile%\AppData\Local\BuffPanel\" rd /q /s "%userprofile%\AppData\Local\BuffPanel\" >nul 2>&1
 
-echo !ESC![92m3.!ESC![0m Entferne Crashhandler, Crashlytics, Logs, Dumps ^& nicht benîtigte Dateien von Drittanbietern....
+echo !ESC![92m3.!ESC![0m Entferne Crashhandler, Crashlytics, Logs, Dumps, leere Ordner ^& nicht benîtigte Dateien von Drittanbietern....
 ::Crashlytics von Drittanbietern
 del /s /f /q CrashUploader.Base.Azure.dll >nul 2>nul
 del /s /f /q CrashUploader.Base.dll >nul 2>nul
@@ -167,8 +181,12 @@ del /s /f /q abbey_crash_reporter.exe >nul 2>nul
 del /s /f /q crashmsg.exe >nul 2>nul
 del /s /f /q output_log.txt >nul 2>nul
 del /s /f /q telemetry64.dll >nul 2>nul
+del /s /f /q BsSndRpt.exe >nul 2>nul
+del /s /f /q BugSplatRc.dll >nul 2>nul
+del /s /f /q BsUnityCrashHandler.exe >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
+for /f "delims=" %%d in ('dir /s /b /ad ^| sort /r') do rd "%%d" >nul 2>nul
 ::del /s /f /q GameCrashUploader.exe >nul 2>nul
 ::del /s /f /q UnityEngine.CrashReportingModule* >nul 2>nul
 ::del /s /f /q UnityEngine.PerformanceReportingModule.dll >nul 2>nul
@@ -183,11 +201,9 @@ set folder="steamapps\common"
 for /f %%i in ('dir UnityCrashHandler*.exe /s /b 2^> nul ^| find "" /v /c') do set VAR=%%i
 echo !ESC![92m4.!ESC![0m Entferne Unity Spyware und Crashlytics in Spieleverzeichnissen....
 echo/
-if [%VAR%]==[0] echo Super, es befanden sich keine UnityCrashHandler in den Spiele-Verzeichnissen
-if %VAR% gtr 0 echo Es wurden !ESC![92m%VAR%!ESC![0m UnityCrashHandler aus den vorhandenen Spieleverzeichnissen gelîscht
 IF EXIST "%folder%" (
     cd /d %folder%
-for /f "delims=" %%i in ('dir /a-d /s /b 2^> nul ^ UnityCrashHandler*.exe') do del "%%~i"
+for /f "delims=" %%i in ('dir /a-d /s /b 2^> nul ^ UnityCrashHandler*.exe') do del "%%~i" >nul 2>nul
 )
 chdir /d %ORIGINAL_DIR%
 
@@ -244,6 +260,8 @@ echo !ESC![92m1.!ESC![0m Download-Cache wird geleert....
 echo/
 IF EXIST "steamapps\downloading\*.*" del "steamapps\downloading\" /q
 IF EXIST "steamapps\downloading" RMDIR "steamapps\downloading" /s /q
+IF EXIST "deopotcache\*.*" del "steamapps\depotcache\" /q
+IF EXIST "depotcache\" RMDIR "depotcache\" /s /q
 IF EXIST "steamapps\shadercache\*.*" del "steamapps\shadercache\" /q
 IF EXIST "steamapps\shadercache\" RMDIR "steamapps\shadercache\" /s /q
 IF EXIST "steamapps\temp\*.*" del "steamapps\temp\" /q
@@ -270,7 +288,6 @@ Pause
 echo/
 echo HTML-Cache leeren
 echo Aktive Steamprozesse werden automatisch geschlossen...
-::Wenn offen, beende Steam inkl. Unterprozessen
 taskkill /F /T /IM steam.exe >nul 2>&1
 echo/
 echo !ESC![92m1.!ESC![0m HTML-Cache wird geleert....
@@ -286,7 +303,6 @@ cls
 if "%navi%"=="1" goto home
 if "%navi%"=="2" exit
 Pause
-
 
 :CF_Del
 @cls
@@ -315,14 +331,11 @@ if "%navi%"=="2" exit
 Pause
 
 :Version
-@cls
-set "filename=%~nx0"
-for %%A in (%filename%) do echo.!ESC![92mDateiname:!ESC![0m %~nx0 - %%~zA bytes
-@echo off
-echo |set /p ="!ESC![92mHash:!ESC![0m "
-CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
+cls
+echo !ESC![92mVersionshistorie:!ESC![0m 
 echo/
 echo !ESC![92mDatum:!ESC![0m          !ESC![92mBeschreibung:!ESC![0m
+echo 28.12.2022      Korrekturen, leere Ordner lîschen und neue Crashlytics hinzugefÅgt
 echo 05.05.2022      Activision DLogUploader.exe
 echo 06.12.2021      Mafia 3 telemetry.dll und crashagent64.exe
 echo 22.11.2021      output_log.txt hinzugefÅgt, Crashdump fix
@@ -341,6 +354,30 @@ echo 07.01.2021      Verschiedene Cacheordner des Steam-Clients kînnen nun gelee
 echo                 Verschiedene Dienste kînnen nun per hosts blockiert werden. Siehe Readme
 echo 06.01.2021      Historie aus dem Thunderfox Script Åbernommen, MenÅ Åberarbeitet, Hash und
 echo                 Dateigrî·e hinzugefÅgt, Funktionen zum Leeren des Steam-Cache's hinzugefÅgt
+echo/
+echo 1) ZurÅck zur Auswahl
+echo 2) Batch schlie·en
+echo/
+set /p navi=Eingabe:
+cls
+if "%navi%"=="1" goto home
+if "%navi%"=="2" exit
+Pause
+
+:about
+cls
+echo !ESC![92möber das Script!ESC![0m
+echo/
+echo Spenden:   gameindustry.eu/de/donations/
+echo Kontakt:   gameindustry.eu/de/kontakt/
+echo Webseite:  gameindustry.eu/
+echo Autor:     Pengin
+echo/
+set "filename=%~nx0"
+for %%A in (%filename%) do echo.!ESC![92mDateiname:!ESC![0m %~nx0 - %%~zA bytes
+@echo off
+echo |set /p ="!ESC![92mSHA256:!ESC![0m "
+CertUtil -hashfile "%~nx0" SHA256 | find /i /v "SHA256" | find /i /v "certutil"
 echo/
 echo 1) ZurÅck zur Auswahl
 echo 2) Batch schlie·en
