@@ -151,9 +151,9 @@ Da die Dateigröße nicht überprüft wird, reicht es somit aus, dem jeweiligem 
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.76
-Datum: 28.12.2022
+Datum: 06.02.2023
 
 Datei/en:
 del_u3a_de.bat
-Hash: 47f3ab27f7914d601e34a7970f650544356b4792f1e1ba655b5e57202ed30064
-CRC32: 481264d1
+Hash: 7a3d59eb542d7c1ee163d2899ce0a305de5c7c73a01b56ad61d8e28d4c8a8d37
+CRC32: 74a03110

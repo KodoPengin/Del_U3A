@@ -181,6 +181,7 @@ del /s /f /q abbey_crash_reporter.exe >nul 2>nul
 del /s /f /q crashmsg.exe >nul 2>nul
 del /s /f /q output_log.txt >nul 2>nul
 del /s /f /q telemetry64.dll >nul 2>nul
+del /s /f /q apex_crash_handler.exe >nul 2>nul
 del /s /f /q BsSndRpt.exe >nul 2>nul
 del /s /f /q BugSplatRc.dll >nul 2>nul
 del /s /f /q BsUnityCrashHandler.exe >nul 2>nul
