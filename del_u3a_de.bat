@@ -13,7 +13,7 @@ echo -------------------------------------------------------------------------
 echo # Das Script entfernt Crashlytics, Logs und Analyticsdienste aus dem    #
 echo # Steam-Verzeichnis und dazugehîrigen (Spiele)verzeichnissen , leert    #
 echo # die Cache-Ordner und entfernt Modding RÅckstÑnde der custom.css       #
-echo # (c) by GameIndustry.eu - 28/12/2022 - %version%                         #
+echo # (c) by GameIndustry.eu - 25/02/2023 - %version%                       #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -182,11 +182,13 @@ del /s /f /q crashmsg.exe >nul 2>nul
 del /s /f /q output_log.txt >nul 2>nul
 del /s /f /q telemetry64.dll >nul 2>nul
 del /s /f /q apex_crash_handler.exe >nul 2>nul
+del /s /f /q RemoteCrashSender.exe >nul 2>nul
 del /s /f /q BsSndRpt.exe >nul 2>nul
 del /s /f /q BugSplatRc.dll >nul 2>nul
 del /s /f /q BsUnityCrashHandler.exe >nul 2>nul
 del /s /f /q *.dmp >nul 2>nul
 del /s /f /q *.log >nul 2>nul
+del /s /f /q steam_autocloud.vdf >nul 2>nul
 for /f "delims=" %%d in ('dir /s /b /ad ^| sort /r') do rd "%%d" >nul 2>nul
 ::del /s /f /q GameCrashUploader.exe >nul 2>nul
 ::del /s /f /q UnityEngine.CrashReportingModule* >nul 2>nul
@@ -336,6 +338,7 @@ cls
 echo !ESC![92mVersionshistorie:!ESC![0m 
 echo/
 echo !ESC![92mDatum:!ESC![0m          !ESC![92mBeschreibung:!ESC![0m
+echo 25.02.2022      steam_autocloud.vdf, RemoteCrashSender.exe hinzugefÅgt
 echo 28.12.2022      Korrekturen, leere Ordner lîschen und neue Crashlytics hinzugefÅgt
 echo 05.05.2022      Activision DLogUploader.exe
 echo 06.12.2021      Mafia 3 telemetry.dll und crashagent64.exe

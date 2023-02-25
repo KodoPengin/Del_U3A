@@ -1,4 +1,4 @@
-Readme für die Del3UA Spywarecleaner Batch - Version 2.76 - von Gameindustry.eu
+Readme für den GI-Spywarecleaner - Version 2.76 - von Gameindustry.eu
 
 Inhalt:
 1. Beschreibung
@@ -62,33 +62,39 @@ steamerrorreporter64.exe
 WriteMiniDump.exe
 
 - Drittanbieter Crashlytics, Dumps, Logs und nicht benötigte Dateien
-*.log
+!! Das Entfernen der Dateien kann eine Weile dauern. Den Prozess nicht abbrechen.
+
 *.dmp
-CrashUploader.Base.Azure.dll
-CrashUploader.Base.dll
-CrashUploader.Base.UI.dll
-CrashUploader.Publish.exe
-CrashUploader.Publish.exe.config
-crashpad_handler.exe
-CrashSender1403.exe
-crashrpt_lang.ini
-CrashRpt1403.dll
-CrashRptProbe1403.dll
-CrashReporter.dll
-CrashReporter.exe
-CrashUploader.Publish.exe.config
-CrashReporter.exe.config
+*.log
+BsSndRpt.exe
+BsUnityCrashHandler.exe
+BugSplatRc.dll
 CrashReportClient.exe
 CrashReportClient.pdb
+CrashReporter.dll
+CrashReporter.exe
+CrashReporter.exe.config
 CrashReporter.resources.dll
+CrashRpt1403.dll
+CrashRptProbe1403.dll
+CrashSender1402.exe
+CrashSender1403.exe
+CrashUploader.Base.Azure.dll
+CrashUploader.Base.UI.dll
+CrashUploader.Base.dll
+CrashUploader.Publish.exe
+CrashUploader.Publish.exe.config
+DLogUploader.exe
 REDEngineErrorReporter.exe
+RemoteCrashSender.exe
+UnrealCEFSubProcess.exe
 abbey_crash_reporter.exe
+apex_crash_handler.exe
 crashmsg.exe
+crashpad_handler.exe
+crashrpt_lang.ini
 output_log.txt
 telemetry64.dll
-BsSndRpt.exe
-BugSplatRc.dll
-BsUnityCrashHandler.exe
 UnityCrashHandler32.exe
 UnityCrashHandler64.exe
 
@@ -105,7 +111,7 @@ UnityEngine.SpatialTracking.dll
 
 
 ----------------- 4. Letzte Änderungen -----------------
-
+- steam_autocloud.vdf, RemoteCrashSender.exe hinzugefügt
 - Korrekturen, leere Ordner löschen und neue Crashlytics hinzugefügt
 - Activision DLogUploader.exe
 - Mafia 3 telemetry.dll und crashagent64.exe
@@ -151,9 +157,9 @@ Da die Dateigröße nicht überprüft wird, reicht es somit aus, dem jeweiligem 
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.76
-Datum: 06.02.2023
+Datum: 25.02.2023
 
 Datei/en:
 del_u3a_de.bat
-Hash: 7a3d59eb542d7c1ee163d2899ce0a305de5c7c73a01b56ad61d8e28d4c8a8d37
-CRC32: 74a03110
+Hash: c0dec5e97dd589b4350fbcfe622e04072af0c6eefc6a8db459f59cefebb3e8a4
+CRC32: cf052914

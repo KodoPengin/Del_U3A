@@ -1,4 +1,4 @@
-Readme für die Del3UA Spywarecleaner Batch - Version 2.76 - von Gameindustry.eu
+Readme for GI-Spywarecleaner - Version 2.76 - by Gameindustry.eu
 
 Inhalt:
 1. Description
@@ -59,33 +59,39 @@ steamerrorreporter64.exe
 WriteMiniDump.exe
 
 - Third party crashlytics, dumps, logs and unnecessary files
-*.log
+!! The deletion of files may take a while. Do not skip the progress
+
 *.dmp
-CrashUploader.Base.Azure.dll
-CrashUploader.Base.dll
-CrashUploader.Base.UI.dll
-CrashUploader.Publish.exe
-CrashUploader.Publish.exe.config
-crashpad_handler.exe
-CrashSender1403.exe
-crashrpt_lang.ini
-CrashRpt1403.dll
-CrashRptProbe1403.dll
-CrashReporter.dll
-CrashReporter.exe
-CrashUploader.Publish.exe.config
-CrashReporter.exe.config
+*.log
+BsSndRpt.exe
+BsUnityCrashHandler.exe
+BugSplatRc.dll
 CrashReportClient.exe
 CrashReportClient.pdb
+CrashReporter.dll
+CrashReporter.exe
+CrashReporter.exe.config
 CrashReporter.resources.dll
+CrashRpt1403.dll
+CrashRptProbe1403.dll
+CrashSender1402.exe
+CrashSender1403.exe
+CrashUploader.Base.Azure.dll
+CrashUploader.Base.UI.dll
+CrashUploader.Base.dll
+CrashUploader.Publish.exe
+CrashUploader.Publish.exe.config
+DLogUploader.exe
 REDEngineErrorReporter.exe
+RemoteCrashSender.exe
+UnrealCEFSubProcess.exe
 abbey_crash_reporter.exe
+apex_crash_handler.exe
 crashmsg.exe
+crashpad_handler.exe
+crashrpt_lang.ini
 output_log.txt
 telemetry64.dll
-BsSndRpt.exe
-BugSplatRc.dll
-BsUnityCrashHandler.exe
 UnityCrashHandler32.exe
 UnityCrashHandler64.exe
 
@@ -103,6 +109,7 @@ UnityEngine.SpatialTracking.dll
 
 ----------------- 4. Latest changes -----------------
 
+- steam_autocloud.vdf, RemoteCrashSender.exe
 - Several fixes, delete empty folders, new crashlytics
 - Activision DLogUploader.exe
 - Mafia 3 telemetry.dll and crashagent64.exe
@@ -151,9 +158,9 @@ Since the file size is not checked, it is thus sufficient to fool the respective
 Source: https://gameindustry.eu/
 Author: Pengin
 Version: 2.76
-Date: 06.02.2023
+Date: 25.02.2023
 
 File/s:
 del_u3a_en.bat
-Hash: 279f23f1190313d7c95f71c02be68f6624adf8835838f9f1211bc74b189c9b5b
-CRC32: 878a2272
+Hash: be4706d86a5d2d39763ec5764514e335c6075223c09c2b7fb550774a9246d22c
+CRC32: 45fe716e
