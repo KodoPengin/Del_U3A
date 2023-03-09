@@ -12,7 +12,7 @@ Inhalt:
 
 ----------------- 1. Beschreibung -----------------
 
-Die Batch durchforstet innerhalb des Steamordners Dateien nach Crashlytics und Logs und löscht dazugehörige Dateien.
+Die Windows-Batch-Datei durchforstet innerhalb des Steamordners Dateien nach Crashlytics und Logs und löscht dazugehörige Dateien.
 Zusätzlich werden die CrashDump und Unity Analytics Ordner (sofern vorhanden) im Nutzerverzeichnis geleert.
 
 Dies beugt einer heimlichen Datenaufnahme und Versand von Crashlytics durch Firmen wie Unity Technologies, ApS, Epic Games, Inc.,
@@ -111,6 +111,7 @@ UnityEngine.SpatialTracking.dll
 
 
 ----------------- 4. Letzte Änderungen -----------------
+- Entfernen von Spyware und ungewollten Dateien optimiert
 - steam_autocloud.vdf, RemoteCrashSender.exe hinzugefügt
 - Korrekturen, leere Ordner löschen und neue Crashlytics hinzugefügt
 - Activision DLogUploader.exe
@@ -157,9 +158,9 @@ Da die Dateigröße nicht überprüft wird, reicht es somit aus, dem jeweiligem 
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.76
-Datum: 25.02.2023
+Datum: 10.03.2023
 
 Datei/en:
 del_u3a_de.bat
-Hash: c0dec5e97dd589b4350fbcfe622e04072af0c6eefc6a8db459f59cefebb3e8a4
-CRC32: cf052914
+Hash: b3502ec62c82e373664bc5c27894fdc3959463547f64e3e21525691a3f8314ac
+CRC32: d6bb73ce

@@ -12,7 +12,7 @@ Inhalt:
 
 ----------------- 1. Description -----------------
 
-The batch scans files within the steam folder for crashlytics and logs and deletes associated files.
+The windows-batch-file scans files within the steam folder for crashlytics and logs and deletes associated files.
 Additionally the CrashDump and Unity Analytics folder (if available) in the user directory are emptied.
 
 This prevents a secret data mining and sending of Crashlytics by companies like Unity Technologies, ApS, Epic Games, Inc.
@@ -109,6 +109,7 @@ UnityEngine.SpatialTracking.dll
 
 ----------------- 4. Latest changes -----------------
 
+- Optimized deleting of spyware and unwanted files
 - steam_autocloud.vdf, RemoteCrashSender.exe
 - Several fixes, delete empty folders, new crashlytics
 - Activision DLogUploader.exe
@@ -158,9 +159,9 @@ Since the file size is not checked, it is thus sufficient to fool the respective
 Source: https://gameindustry.eu/
 Author: Pengin
 Version: 2.76
-Date: 25.02.2023
+Date: 10.03.2023
 
 File/s:
 del_u3a_en.bat
-Hash: be4706d86a5d2d39763ec5764514e335c6075223c09c2b7fb550774a9246d22c
-CRC32: 45fe716e
+Hash: 6968417282a5003546f376fe2f7fc02e562bdb93474466bd47c15f111921a1a9
+CRC32: 732fc05a

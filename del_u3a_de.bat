@@ -13,7 +13,7 @@ echo -------------------------------------------------------------------------
 echo # Das Script entfernt Crashlytics, Logs und Analyticsdienste aus dem    #
 echo # Steam-Verzeichnis und dazugehîrigen (Spiele)verzeichnissen , leert    #
 echo # die Cache-Ordner und entfernt Modding RÅckstÑnde der custom.css       #
-echo # (c) by GameIndustry.eu - 25/02/2023 - %version%                       #
+echo # (c) by GameIndustry.eu - 10/03/2023 - %version%                       #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -156,69 +156,16 @@ if exist "%userprofile%\AppData\Local\BuffPanel\" rd /q /s "%userprofile%\AppDat
 
 echo !ESC![92m3.!ESC![0m Entferne Crashhandler, Crashlytics, Logs, Dumps, leere Ordner ^& nicht benîtigte Dateien von Drittanbietern....
 ::Crashlytics von Drittanbietern
-del /s /f /q CrashUploader.Base.Azure.dll >nul 2>nul
-del /s /f /q CrashUploader.Base.dll >nul 2>nul
-del /s /f /q CrashUploader.Base.UI.dll >nul 2>nul
-del /s /f /q CrashUploader.Publish.exe >nul 2>nul
-del /s /f /q CrashUploader.Publish.exe.config >nul 2>nul
-del /s /f /q crashpad_handler.exe >nul 2>nul
-del /s /f /q CrashSender1402.exe >nul 2>nul
-del /s /f /q CrashSender1403.exe >nul 2>nul
-del /s /f /q crashrpt_lang.ini >nul 2>nul
-del /s /f /q CrashRpt1403.dll >nul 2>nul
-del /s /f /q CrashRptProbe1403.dll >nul 2>nul
-del /s /f /q CrashReporter.dll >nul 2>nul
-del /s /f /q CrashReporter.exe >nul 2>nul
-del /s /f /q CrashUploader.Publish.exe.config >nul 2>nul
-del /s /f /q CrashReporter.exe.config >nul 2>nul
-del /s /f /q CrashReportClient.exe >nul 2>nul
-del /s /f /q DLogUploader.exe >nul 2>nul
-del /s /f /q UnrealCEFSubProcess.exe >nul 2>nul
-del /s /f /q CrashReportClient.pdb >nul 2>nul
-del /s /f /q CrashReporter.resources.dll >nul 2>nul
-del /s /f /q REDEngineErrorReporter.exe >nul 2>nul
-del /s /f /q abbey_crash_reporter.exe >nul 2>nul
-del /s /f /q crashmsg.exe >nul 2>nul
-del /s /f /q output_log.txt >nul 2>nul
-del /s /f /q telemetry64.dll >nul 2>nul
-del /s /f /q apex_crash_handler.exe >nul 2>nul
-del /s /f /q RemoteCrashSender.exe >nul 2>nul
-del /s /f /q BsSndRpt.exe >nul 2>nul
-del /s /f /q BugSplatRc.dll >nul 2>nul
-del /s /f /q BsUnityCrashHandler.exe >nul 2>nul
-del /s /f /q *.dmp >nul 2>nul
-del /s /f /q *.log >nul 2>nul
-del /s /f /q steam_autocloud.vdf >nul 2>nul
-for /f "delims=" %%d in ('dir /s /b /ad ^| sort /r') do rd "%%d" >nul 2>nul
-::del /s /f /q GameCrashUploader.exe >nul 2>nul
-::del /s /f /q UnityEngine.CrashReportingModule* >nul 2>nul
-::del /s /f /q UnityEngine.PerformanceReportingModule.dll >nul 2>nul
-::del /s /f /q Unity.MemoryProfiler.dll >nul 2>nul
-::del /s /f /q UnityEngine.UnityTestProtocolModule.dll >nul 2>nul
-::del /s /f /q System.Diagnostics.StackTrace.dll >nul 2>nul
-::del /s /f /q UnityEngine.SpatialTracking.dll >nul 2>nul
-
-::Unity Analytics
-set ORIGINAL_DIR=%CD%
-set folder="steamapps\common"
-for /f %%i in ('dir UnityCrashHandler*.exe /s /b 2^> nul ^| find "" /v /c') do set VAR=%%i
-echo !ESC![92m4.!ESC![0m Entferne Unity Spyware und Crashlytics in Spieleverzeichnissen....
 echo/
-IF EXIST "%folder%" (
-    cd /d %folder%
-for /f "delims=" %%i in ('dir /a-d /s /b 2^> nul ^ UnityCrashHandler*.exe') do del "%%~i" >nul 2>nul
-)
-chdir /d %ORIGINAL_DIR%
+setlocal
 
-::Unity Technologies
-for /f "delims=" %%F in ('dir /b /ad /s "%USERPROFILE%\AppData\LocalLow\Unity.*" 2^>nul') do rd /s /q "%%F" >nul 2>nul
-set ORIGINAL_DIR=%CD%
-set folder="%USERPROFILE%\AppData\LocalLow\"
-IF EXIST "%folder%" (
-cd /d %folder%
-for /f "delims=" %%i in ('dir /a-d /s /b 2^> nul ^ *.log') do del "%%~i" >nul 2>nul
+set "filelist=CrashUploader.Base.Azure.dll CrashUploader.Base.dll CrashUploader.Base.UI.dll CrashUploader.Publish.exe CrashUploader.Publish.exe.config crashpad_handler.exe CrashSender1402.exe CrashSender1403.exe crashrpt_lang.ini CrashRpt1403.dll CrashRptProbe1403.dll CrashReporter.dll CrashReporter.exe CrashUploader.Publish.exe.config CrashReporter.exe.config CrashReportClient.exe DLogUploader.exe UnrealCEFSubProcess.exe CrashReportClient.pdb CrashReporter.resources.dll REDEngineErrorReporter.exe abbey_crash_reporter.exe crashmsg.exe output_log.txt telemetry64.dll apex_crash_handler.exe RemoteCrashSender.exe BsSndRpt.exe BugSplatRc.dll BsUnityCrashHandler.exe log.txt steam_autocloud.vdf UnityCrashHandler32.exe UnityCrashHandler64.exe"
+
+for /f "delims=" %%i in ('dir /b /s %filelist% 2^>nul') do (
+    echo "%%i" wurde entfernt.
+    del "%%i"
 )
-chdir /d %ORIGINAL_DIR%
+for /f "delims=" %%d in ('dir /s /b /ad ^| sort /r') do rd "%%d" >nul 2>nul
 echo/
 echo !ESC![92mFertig :]!ESC![0m
 echo/
@@ -338,7 +285,8 @@ cls
 echo !ESC![92mVersionshistorie:!ESC![0m 
 echo/
 echo !ESC![92mDatum:!ESC![0m          !ESC![92mBeschreibung:!ESC![0m
-echo 25.02.2022      steam_autocloud.vdf, RemoteCrashSender.exe hinzugefÅgt
+echo 10.03.2023      Entfernen von Spyware und ungewollten Dateien optimiert.
+echo 25.02.2023      steam_autocloud.vdf, RemoteCrashSender.exe hinzugefÅgt
 echo 28.12.2022      Korrekturen, leere Ordner lîschen und neue Crashlytics hinzugefÅgt
 echo 05.05.2022      Activision DLogUploader.exe
 echo 06.12.2021      Mafia 3 telemetry.dll und crashagent64.exe
