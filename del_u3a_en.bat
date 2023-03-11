@@ -13,7 +13,7 @@ echo -------------------------------------------------------------------------
 echo # This script deletes crashyltics, logs and spyware from the            #
 echo # Steamfolder and from related (game) folders, clean the cache folders  #
 echo # and deletes modding leftovers from custom.css files if necessary      #
-echo # (c) by GameIndustry.eu - 10 Mar 2023 - %version%                      #
+echo # (c) by GameIndustry.eu - 11 Mar 2023 - %version%                      #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -159,7 +159,7 @@ echo !ESC![92m3.!ESC![0m Delete Crashhandler, CrashHandler, Logs, Dumps, empty f
 echo/
 setlocal
 
-set "filelist=CrashUploader.Base.Azure.dll CrashUploader.Base.dll CrashUploader.Base.UI.dll CrashUploader.Publish.exe CrashUploader.Publish.exe.config crashpad_handler.exe CrashSender1402.exe CrashSender1403.exe crashrpt_lang.ini CrashRpt1403.dll CrashRptProbe1403.dll CrashReporter.dll CrashReporter.exe CrashUploader.Publish.exe.config CrashReporter.exe.config CrashReportClient.exe DLogUploader.exe UnrealCEFSubProcess.exe CrashReportClient.pdb CrashReporter.resources.dll REDEngineErrorReporter.exe abbey_crash_reporter.exe crashmsg.exe output_log.txt telemetry64.dll apex_crash_handler.exe RemoteCrashSender.exe BsSndRpt.exe BugSplatRc.dll BsUnityCrashHandler.exe log.txt steam_autocloud.vdf UnityCrashHandler32.exe UnityCrashHandler64.exe"
+set "filelist=CrashReport.exe CrashUploader.Base.Azure.dll CrashUploader.Base.dll CrashUploader.Base.UI.dll CrashUploader.Publish.exe CrashUploader.Publish.exe.config crashpad_handler.exe CrashSender1402.exe CrashSender1403.exe crashrpt_lang.ini CrashRpt1403.dll CrashRptProbe1403.dll CrashReporter.dll CrashReporter.exe CrashUploader.Publish.exe.config CrashReporter.exe.config CrashReportClient.exe DLogUploader.exe UnrealCEFSubProcess.exe CrashReportClient.pdb CrashReporter.resources.dll REDEngineErrorReporter.exe abbey_crash_reporter.exe crashmsg.exe output_log.txt telemetry64.dll apex_crash_handler.exe RemoteCrashSender.exe BsSndRpt.exe BugSplatRc.dll BsUnityCrashHandler.exe log.txt steam_autocloud.vdf UnityCrashHandler32.exe UnityCrashHandler64.exe"
 
 for /f "delims=" %%i in ('dir /b /s %filelist% 2^>nul') do (
     echo "%%i" was deleted.

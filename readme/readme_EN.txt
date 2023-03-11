@@ -159,9 +159,9 @@ Since the file size is not checked, it is thus sufficient to fool the respective
 Source: https://gameindustry.eu/
 Author: Pengin
 Version: 2.76
-Date: 10.03.2023
+Date: 11.03.2023
 
 File/s:
 del_u3a_en.bat
-Hash: 6968417282a5003546f376fe2f7fc02e562bdb93474466bd47c15f111921a1a9
-CRC32: 732fc05a
+Hash: 8c8712cc31b4b7f841b8eb397dffbdf6d1521067a3768a4d2a7556b306ccd478
+CRC32: 709cae1d
