@@ -13,7 +13,7 @@ echo -------------------------------------------------------------------------
 echo # This script deletes crashyltics, logs and spyware from the            #
 echo # Steamfolder and from related (game) folders, clean the cache folders  #
 echo # and deletes modding leftovers from custom.css files if necessary      #
-echo # (c) by GameIndustry.eu - 11 Mar 2023 - %version%                      #
+echo # (c) by GameIndustry.eu - 20 Mar 2023 - %version%                      #
 echo -------------------------------------------------------------------------
 echo/!ESC![0m
 
@@ -73,6 +73,7 @@ echo !ESC![92mSteam-Client: Privacy!ESC![0m
 echo 1) Clean CrashHandler, Crashlytics ^& Spyware
 echo/
 echo !ESC![92mSteam-Client: Maintenance!ESC![0m
+echo !ESC![92mSteam-Client: Maintenance (Use the options only when risks are aware.)!ESC![0m
 echo 2) Clean Library Cache
 echo 3) Clean Picture, Download ^& Shadercache
 echo 4) Clean HTML-Cache (Allow Steam to update once after execution)
@@ -122,37 +123,42 @@ echo BootStrapperForceSelfUpdate=disable>> steam.cfg
 echo !ESC![92m1.!ESC![0m Delete Crashlytics, Dumps and Logs related to Valve Corporation....
 ::Delete files related to logging and tracking
 timeout /t 3 /nobreak>nul
-IF EXIST "bin\cef\cef.win7\*.*" del "bin\cef\cef.win7\*.*" /q
-IF EXIST "bin\cef\cef.win7\" RMDIR "bin\cef\cef.win7\" /s /q
-IF EXIST "dumps\*.*" del "dumps\*.*" /q
-IF EXIST "dumps\" RMDIR "dumps\" /s /q
-IF EXIST "logs\*.*" del "logs\*.*" /q
-IF EXIST "logs\" RMDIR "logs\" /s /q
-IF EXIST ".crash" del ".crash" /q
-IF EXIST "bin\cef\cef.win7x64\crash_reporter.cfg" del "bin\cef\cef.win7x64\crash_reporter.cfg" /q
-IF EXIST "bin\cef\cef.win7x64\debug.log" del "bin\cef\cef.win7x64\debug.log" /q
-IF EXIST "bin\secure_desktop_capture.exe" del "bin\secure_desktop_capture.exe" /f /q
-IF EXIST "bin\secure_desktop_capture.zip" del "bin\secure_desktop_capture.zip" /f /q
-IF EXIST "bin\steam_monitor.exe" del "bin\steam_monitor.exe" /f /q
-IF EXIST "package\steam_client_metrics.bin" del "package\steam_client_metrics.bin" /f /q
-IF EXIST "crashhandler64.dll" del "crashhandler64.dll" /f /q
-IF EXIST "crashhandler.dll" del "crashhandler.dll" /f /q
-IF EXIST "crashhandler.dll.old" del "crashhandler.dll.old" /f /q
-IF EXIST "steamerrorreporter.exe" del "steamerrorreporter.exe" /f /q
-IF EXIST "steamerrorreporter64.exe" del "steamerrorreporter64.exe" /f /q
-IF EXIST "WriteMiniDump.exe" del "WriteMiniDump.exe" /f /q
+@echo off
+IF EXIST "bin\cef\cef.win7\*.*" (
+    del "bin\cef\cef.win7\*.*" /q
+    RMDIR "bin\cef\cef.win7\" /s /q
+)
+IF EXIST "dumps\*.*" (
+    del "dumps\*.*" /q
+    RMDIR "dumps\" /s /q
+)
+IF EXIST "logs\*.*" (
+    del "logs\*.*" /q
+    RMDIR "logs\" /s /q
+)
+del ".crash" /q >nul 2>nul
+del "bin\cef\cef.win7x64\crash_reporter.cfg" /q >nul 2>nul
+del "bin\cef\cef.win7x64\debug.log" /q >nul 2>nul
+del "bin\secure_desktop_capture.exe" /f /q >nul 2>nul
+del "bin\secure_desktop_capture.zip" /f /q >nul 2>nul
+del "bin\steam_monitor.exe" /f /q >nul 2>nul
+del "package\steam_client_metrics.bin" /f /q >nul 2>nul
+del "crashhandler64.dll" /f /q >nul 2>nul
+del "crashhandler.dll" /f /q >nul 2>nul
+del "crashhandler.dll.old" /f /q >nul 2>nul
+del "steamerrorreporter.exe" /f /q >nul 2>nul
+del "steamerrorreporter64.exe" /f /q >nul 2>nul
+del "WriteMiniDump.exe" /f /q >nul 2>nul
 
 echo !ESC![92m2.!ESC![0m Delete (if exist) Crashdumps from system folder....
 ::Entferne Crashdumps
-if exist "%userprofile%\AppData\Local\CrashDumps\" rd /q /s "%userprofile%\AppData\Local\CrashDumps\" >nul 2>&1
-if exist "%userprofile%\AppData\Local\CEF\User Data\Crashpad\" rd /q /s "%userprofile%\AppData\Local\CEF\User Data\Crashpad\" >nul 2>&1
-if exist "%userprofile%\AppData\Local\CEF\User Data\CrashpadMetrics-active.pma" del "%userprofile%\AppData\Local\CEF\User Data\CrashpadMetrics-active.pma" /f /q
-if exist "%userprofile%\AppData\Local\CrashReportClient\" rd /q /s "%userprofile%\AppData\Local\CrashReportClient\" >nul 2>&1
-if exist "%userprofile%\AppData\Local\T2GP Launcher\app-1.0.4.2070\crashagent64.exe" del "%userprofile%\AppData\Local\T2GP Launcher\app-1.0.4.2070\crashagent64.exe" /f /q
-if exist "%userprofile%\AppData\Local\GameAnalytics\" rd /q /s "%userprofile%\AppData\Local\GameAnalytics\" >nul 2>&1
-if exist "%userprofile%\AppData\Local\UnrealEngine\" rd /q /s "%userprofile%\AppData\Local\UnrealEngine\" >nul 2>&1
-if exist "%userprofile%\AppData\Local\UniSDK\" rd /q /s "%userprofile%\AppData\Local\UniSDK\" >nul 2>&1
-if exist "%userprofile%\AppData\Local\BuffPanel\" rd /q /s "%userprofile%\AppData\Local\BuffPanel\" >nul 2>&1
+set "foldersToDelete=%userprofile%\AppData\Local\CrashDumps %userprofile%\AppData\Local\CEF\User Data\Crashpad %userprofile%\AppData\Local\CrashReportClient %userprofile%\AppData\Local\T2GP Launcher\app-1.0.4.2070 %userprofile%\AppData\Local\GameAnalytics %userprofile%\AppData\Local\UnrealEngine %userprofile%\AppData\Local\UniSDK %userprofile%\AppData\Local\BuffPanel"
+
+for %%i in (%foldersToDelete%) do (
+    if exist "%%i" (
+        rd /s /q "%%i"
+    )
+)
 
 echo !ESC![92m3.!ESC![0m Delete Crashhandler, CrashHandler, Logs, Dumps, empty folders ^& unnecessary stuff from Third party companies....
 ::Crashlytics from Third party companies

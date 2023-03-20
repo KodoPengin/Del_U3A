@@ -111,6 +111,7 @@ UnityEngine.SpatialTracking.dll
 
 
 ----------------- 4. Letzte Änderungen -----------------
+- Codeoptimierung
 - Entfernen von Spyware und ungewollten Dateien optimiert
 - steam_autocloud.vdf, RemoteCrashSender.exe hinzugefügt
 - Korrekturen, leere Ordner löschen und neue Crashlytics hinzugefügt
@@ -158,9 +159,9 @@ Da die Dateigröße nicht überprüft wird, reicht es somit aus, dem jeweiligem 
 Quelle: https://gameindustry.eu/
 Author: Pengin
 Version: 2.76
-Datum: 11.03.2023
+Datum: 20.03.2023
 
 Datei/en:
 del_u3a_de.bat
-Hash: 09b62735ad7d11c982de92adaa2e1424c07f429b2a12454eeb844ca7c47e03a9
-CRC32: 70a02dc4
+Hash: d36836540a3129f14c7d822a5dfa82e94ba04fa10ed8bc48b1d8ca77318d645c
+CRC32: dc0457a5
